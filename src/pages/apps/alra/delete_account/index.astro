@@ -1,0 +1,724 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+---
+
+<Layout>
+    <head>
+        <meta name="description" content="Eliminar cuenta de ALRA Plastic Recycling - Gestione la eliminación de su cuenta y datos personales." />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    </head>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+        }
+
+        .warning-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: .7;
+            }
+        }
+
+        .shake {
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+
+        .slide-in {
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .progress-bar {
+            transition: width 0.3s ease;
+        }
+
+        .checkbox-custom:checked {
+            background-color: #dc2626;
+            border-color: #dc2626;
+        }
+
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #dc2626;
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+        }
+    </style>
+
+    <!-- Header -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-3">
+                    <img 
+                        src="https://xzeeudfqafydqizuqorm.supabase.co/storage/v1/object/public/lotes/alra_logo.png" 
+                        alt="ALRA Logo"
+                        class="h-12 w-auto"
+                    />
+                    <span class="text-xl font-bold text-red-600">Eliminar Cuenta</span>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="/apps/alra" class="text-gray-700 hover:text-emerald-600 font-medium transition-colors">← Volver al inicio</a>
+                    <a href="/apps/alra/support" class="text-gray-700 hover:text-emerald-600 font-medium transition-colors">Soporte</a>
+                </div>
+
+                <button class="md:hidden text-gray-700" id="mobile-menu-btn">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="hidden md:hidden bg-white border-t" id="mobile-menu">
+            <div class="px-4 py-4 space-y-3">
+                <a href="/apps/alra" class="block text-gray-700 hover:text-emerald-600 font-medium">← Volver al inicio</a>
+                <a href="/apps/alra/support" class="block text-gray-700 hover:text-emerald-600 font-medium">Soporte</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="min-h-screen pt-32 pb-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <!-- Warning Banner -->
+            <div class="bg-red-50 border-2 border-red-200 rounded-2xl p-6 mb-8 slide-in">
+                <div class="flex items-start space-x-4">
+                    <div class="warning-pulse">
+                        <svg class="w-12 h-12 text-red-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-red-900 mb-3">⚠️ Advertencia: Acción Irreversible</h2>
+                        <p class="text-red-800 leading-relaxed">
+                            Estás a punto de eliminar permanentemente tu cuenta de ALRA Plastic Recycling. Esta acción <strong>NO se puede deshacer</strong> y resultará en la pérdida completa de tus datos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Card -->
+            <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
+                <!-- Progress Bar -->
+                <div class="bg-gray-100 h-2">
+                    <div id="progress-bar" class="progress-bar bg-red-600 h-full" style="width: 0%"></div>
+                </div>
+
+                <div class="p-8 md:p-12">
+                    <!-- Step Indicator -->
+                    <div class="flex items-center justify-center mb-8">
+                        <div class="flex items-center space-x-4">
+                            <div id="step1-indicator" class="flex items-center justify-center w-10 h-10 rounded-full bg-red-600 text-white font-bold">
+                                1
+                            </div>
+                            <div class="h-1 w-16 bg-gray-300" id="connector1"></div>
+                            <div id="step2-indicator" class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-300 text-gray-600 font-bold">
+                                2
+                            </div>
+                            <div class="h-1 w-16 bg-gray-300" id="connector2"></div>
+                            <div id="step3-indicator" class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-300 text-gray-600 font-bold">
+                                3
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 1: Information -->
+                    <div id="step1" class="step-content">
+                        <div class="text-center mb-8">
+                            <div class="inline-block bg-red-100 p-4 rounded-full mb-4">
+                                <svg class="w-16 h-16 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <h2 class="text-3xl font-bold text-gray-900 mb-3">¿Qué sucederá al eliminar tu cuenta?</h2>
+                            <p class="text-gray-600">Lee cuidadosamente antes de continuar</p>
+                        </div>
+
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start space-x-4 p-4 bg-red-50 rounded-xl border border-red-200">
+                                <svg class="w-6 h-6 text-red-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                                <div>
+                                    <h4 class="font-bold text-red-900 mb-1">Eliminación de datos personales</h4>
+                                    <p class="text-sm text-red-800">Tu nombre, email, teléfono y toda información personal será eliminada permanentemente</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4 p-4 bg-red-50 rounded-xl border border-red-200">
+                                <svg class="w-6 h-6 text-red-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                                <div>
+                                    <h4 class="font-bold text-red-900 mb-1">Pérdida de acceso a la plataforma</h4>
+                                    <p class="text-sm text-red-800">No podrás acceder al sistema de trazabilidad ni consultar información de lotes</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4 p-4 bg-red-50 rounded-xl border border-red-200">
+                                <svg class="w-6 h-6 text-red-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                                <div>
+                                    <h4 class="font-bold text-red-900 mb-1">Historial de operaciones</h4>
+                                    <p class="text-sm text-red-800">Se perderá el historial de todas tus operaciones y registros de lotes asociados</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4 p-4 bg-red-50 rounded-xl border border-red-200">
+                                <svg class="w-6 h-6 text-red-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                                <div>
+                                    <h4 class="font-bold text-red-900 mb-1">Preferencias y configuración</h4>
+                                    <p class="text-sm text-red-800">Todas tus preferencias, notificaciones y configuraciones personalizadas serán eliminadas</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4 p-4 bg-amber-50 rounded-xl border border-amber-200">
+                                <svg class="w-6 h-6 text-amber-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <div>
+                                    <h4 class="font-bold text-amber-900 mb-1">Datos que se conservan por ley</h4>
+                                    <p class="text-sm text-amber-800">Información fiscal y legal será conservada según lo requiere la legislación mexicana (hasta 5 años)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg mb-8">
+                            <div class="flex items-start space-x-3">
+                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <div>
+                                    <p class="font-semibold text-blue-900 mb-2">¿Tienes problemas con tu cuenta?</p>
+                                    <p class="text-sm text-blue-800 mb-3">Antes de eliminar tu cuenta, considera contactar a nuestro equipo de soporte. Podemos ayudarte con:</p>
+                                    <ul class="text-sm text-blue-800 space-y-1">
+                                        <li>• Cambio de contraseña</li>
+                                        <li>• Actualización de datos personales</li>
+                                        <li>• Resolución de problemas técnicos</li>
+                                        <li>• Suspensión temporal de cuenta</li>
+                                    </ul>
+                                    <a href="/apps/alra/support" class="inline-block mt-3 text-blue-700 font-semibold hover:text-blue-800 underline">
+                                        Contactar soporte →
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button onclick="window.location.href='/apps/alra'" class="flex-1 bg-gray-200 text-gray-700 px-6 py-4 rounded-xl font-semibold hover:bg-gray-300 transition-colors">
+                                Cancelar y volver
+                            </button>
+                            <button id="continue-step1" class="flex-1 bg-red-600 text-white px-6 py-4 rounded-xl font-semibold hover:bg-red-700 transition-colors">
+                                Entiendo, continuar
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Verification -->
+                    <div id="step2" class="step-content hidden">
+                        <div class="text-center mb-8">
+                            <div class="inline-block bg-red-100 p-4 rounded-full mb-4">
+                                <svg class="w-16 h-16 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                </svg>
+                            </div>
+                            <h2 class="text-3xl font-bold text-gray-900 mb-3">Verificación de identidad</h2>
+                            <p class="text-gray-600">Confirma que eres el titular de la cuenta</p>
+                        </div>
+
+                        <form id="verification-form" class="space-y-6 mb-8">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Email de la cuenta *</label>
+                                <input 
+                                    type="email" 
+                                    id="email-verify"
+                                    required
+                                    placeholder="tu@email.com"
+                                    class="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-red-600 focus:outline-none transition-colors"
+                                />
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Contraseña actual *</label>
+                                <div class="relative">
+                                    <input 
+                                        type="password" 
+                                        id="password-verify"
+                                        required
+                                        placeholder="Tu contraseña"
+                                        class="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-red-600 focus:outline-none transition-colors"
+                                    />
+                                    <button type="button" id="toggle-password" class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-3">Razón de la eliminación (opcional)</label>
+                                <select class="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-red-600 focus:outline-none transition-colors">
+                                    <option value="">Selecciona una razón...</option>
+                                    <option value="no-uso">Ya no uso el servicio</option>
+                                    <option value="privacidad">Preocupaciones de privacidad</option>
+                                    <option value="alternativa">Encontré una alternativa</option>
+                                    <option value="temporal">Solo necesitaba uso temporal</option>
+                                    <option value="insatisfecho">No estoy satisfecho con el servicio</option>
+                                    <option value="otro">Otro motivo</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-3">Comentarios adicionales (opcional)</label>
+                                <textarea 
+                                    rows="4"
+                                    placeholder="Cuéntanos más sobre tu decisión. Tu retroalimentación nos ayuda a mejorar."
+                                    class="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-red-600 focus:outline-none transition-colors resize-none"
+                                ></textarea>
+                            </div>
+                        </form>
+
+                        <div id="verification-error" class="hidden bg-red-100 border-2 border-red-300 rounded-xl p-4 mb-6">
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <p class="text-red-800 font-semibold">Credenciales incorrectas. Por favor verifica tu email y contraseña.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button id="back-step2" class="flex-1 bg-gray-200 text-gray-700 px-6 py-4 rounded-xl font-semibold hover:bg-gray-300 transition-colors">
+                                ← Volver
+                            </button>
+                            <button id="continue-step2" class="flex-1 bg-red-600 text-white px-6 py-4 rounded-xl font-semibold hover:bg-red-700 transition-colors">
+                                Verificar y continuar
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Final Confirmation -->
+                    <div id="step3" class="step-content hidden">
+                        <div class="text-center mb-8">
+                            <div class="inline-block bg-red-100 p-4 rounded-full mb-4">
+                                <svg class="w-16 h-16 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                                </svg>
+                            </div>
+                            <h2 class="text-3xl font-bold text-gray-900 mb-3">Confirmación final</h2>
+                            <p class="text-gray-600">Último paso antes de eliminar tu cuenta permanentemente</p>
+                        </div>
+
+                        <div class="bg-red-50 border-2 border-red-300 rounded-2xl p-6 mb-8">
+                            <h3 class="font-bold text-red-900 text-lg mb-4">Confirma que entiendes las consecuencias:</h3>
+                            
+                            <div class="space-y-4">
+                                <label class="flex items-start space-x-3 cursor-pointer group">
+                                    <input type="checkbox" class="checkbox-custom mt-1 w-5 h-5 rounded border-2 border-red-300" id="checkbox1" />
+                                    <span class="text-sm text-red-900 group-hover:text-red-700">
+                                        Entiendo que <strong>todos mis datos personales</strong> serán eliminados permanentemente
+                                    </span>
+                                </label>
+
+                                <label class="flex items-start space-x-3 cursor-pointer group">
+                                    <input type="checkbox" class="checkbox-custom mt-1 w-5 h-5 rounded border-2 border-red-300" id="checkbox2" />
+                                    <span class="text-sm text-red-900 group-hover:text-red-700">
+                                        Entiendo que <strong>perderé acceso</strong> a la plataforma y no podré recuperar mi cuenta
+                                    </span>
+                                </label>
+
+                                <label class="flex items-start space-x-3 cursor-pointer group">
+                                    <input type="checkbox" class="checkbox-custom mt-1 w-5 h-5 rounded border-2 border-red-300" id="checkbox3" />
+                                    <span class="text-sm text-red-900 group-hover:text-red-700">
+                                        Entiendo que <strong>esta acción es irreversible</strong> y no podré deshacer la eliminación
+                                    </span>
+                                </label>
+
+                                <label class="flex items-start space-x-3 cursor-pointer group">
+                                    <input type="checkbox" class="checkbox-custom mt-1 w-5 h-5 rounded border-2 border-red-300" id="checkbox4" />
+                                    <span class="text-sm text-red-900 group-hover:text-red-700">
+                                        He considerado <strong>contactar a soporte</strong> antes de tomar esta decisión final
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-100 rounded-xl p-6 mb-8">
+                            <label class="block text-sm font-semibold text-gray-900 mb-3">
+                                Para confirmar, escribe: <span class="text-red-600 font-mono">ELIMINAR MI CUENTA</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                id="confirmation-text"
+                                placeholder="Escribe exactamente: ELIMINAR MI CUENTA"
+                                class="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-red-600 focus:outline-none transition-colors font-mono"
+                            />
+                        </div>
+
+                        <div id="final-error" class="hidden bg-red-100 border-2 border-red-300 rounded-xl p-4 mb-6">
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <p class="text-red-800 font-semibold" id="final-error-message"></p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button id="back-step3" class="flex-1 bg-gray-200 text-gray-700 px-6 py-4 rounded-xl font-semibold hover:bg-gray-300 transition-colors">
+                                ← Volver
+                            </button>
+                            <button id="delete-account-btn" disabled class="flex-1 bg-red-600 text-white px-6 py-4 rounded-xl font-semibold hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                                Eliminar mi cuenta permanentemente
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Success Message (Hidden initially) -->
+                    <div id="success-message" class="step-content hidden text-center">
+                        <div class="inline-block bg-green-100 p-4 rounded-full mb-6">
+                            <svg class="w-16 h-16 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-4">Cuenta eliminada exitosamente</h2>
+                        <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+                            Tu cuenta y datos personales han sido eliminados permanentemente de nuestros sistemas. Lamentamos verte partir.
+                        </p>
+                        <div class="bg-blue-50 border-2 border-blue-200 rounded-xl p-6 mb-8 max-w-md mx-auto">
+                            <p class="text-blue-900 mb-2">
+                                Si cambias de opinión en el futuro, siempre serás bienvenido a crear una nueva cuenta.
+                            </p>
+                            <a href="/apps/alra" class="inline-block text-blue-700 font-semibold hover:text-blue-800 underline mt-2">
+                                Volver al sitio web →
+                            </a>
+                        </div>
+                        <p class="text-sm text-gray-500">
+                            Serás redirigido automáticamente en <span id="countdown">10</span> segundos...
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Help Card -->
+            <div class="mt-8 bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
+                <div class="flex items-start space-x-4">
+                    <div class="bg-emerald-100 p-3 rounded-xl flex-shrink-0">
+                        <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">¿Necesitas ayuda?</h3>
+                        <p class="text-gray-600 mb-4">
+                            Si tienes dudas o problemas con tu cuenta, nuestro equipo de soporte está listo para ayudarte. No es necesario eliminar tu cuenta para resolver problemas.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="/apps/alra/support" class="inline-flex items-center space-x-2 bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                </svg>
+                                <span>Contactar Soporte</span>
+                            </a>
+                            <a href="mailto:support@alra.mx" class="inline-flex items-center space-x-2 bg-gray-200 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                                <span>Enviar Email</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="flex items-center justify-center space-x-3 mb-4">
+                <img 
+                    src="https://xzeeudfqafydqizuqorm.supabase.co/storage/v1/object/public/lotes/alra_logo.png" 
+                    alt="ALRA Logo"
+                    class="h-10 w-auto"
+                />
+                <span class="text-xl font-bold text-emerald-400">ALRA Plastic Recycling</span>
+            </div>
+            <p class="text-gray-400 mb-6">
+                Comprometidos con tu privacidad y el control de tus datos
+            </p>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="/apps/alra" class="text-gray-400 hover:text-emerald-400 transition-colors">Inicio</a>
+                <a href="/apps/alra/privacy" class="text-gray-400 hover:text-emerald-400 transition-colors">Privacidad</a>
+                <a href="/apps/alra/support" class="text-gray-400 hover:text-emerald-400 transition-colors">Soporte</a>
+            </div>
+            <p class="text-sm text-gray-500">
+                &copy; 2024 ALRA Plastic Recycling. Todos los derechos reservados. | 
+                <span class="text-emerald-400">Powered by Neurovix</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // State management
+        let currentStep = 1;
+        const totalSteps = 3;
+
+        // Elements
+        const progressBar = document.getElementById('progress-bar');
+        const steps = {
+            1: document.getElementById('step1'),
+            2: document.getElementById('step2'),
+            3: document.getElementById('step3')
+        };
+        const stepIndicators = {
+            1: document.getElementById('step1-indicator'),
+            2: document.getElementById('step2-indicator'),
+            3: document.getElementById('step3-indicator')
+        };
+        const connectors = {
+            1: document.getElementById('connector1'),
+            2: document.getElementById('connector2')
+        };
+
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Update progress
+        function updateProgress() {
+            const progress = ((currentStep - 1) / (totalSteps - 1)) * 100;
+            progressBar.style.width = progress + '%';
+        }
+
+        // Update step indicators
+        function updateStepIndicators() {
+            Object.keys(stepIndicators).forEach(step => {
+                const stepNum = parseInt(step);
+                const indicator = stepIndicators[step];
+                
+                if (stepNum < currentStep) {
+                    // Completed step
+                    indicator.classList.remove('bg-gray-300', 'text-gray-600', 'bg-red-600');
+                    indicator.classList.add('bg-green-600', 'text-white');
+                    indicator.innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>';
+                } else if (stepNum === currentStep) {
+                    // Current step
+                    indicator.classList.remove('bg-gray-300', 'text-gray-600', 'bg-green-600');
+                    indicator.classList.add('bg-red-600', 'text-white');
+                    indicator.textContent = step;
+                } else {
+                    // Future step
+                    indicator.classList.remove('bg-red-600', 'bg-green-600');
+                    indicator.classList.add('bg-gray-300', 'text-gray-600');
+                    indicator.textContent = step;
+                }
+            });
+
+            // Update connectors
+            if (currentStep > 1) {
+                connectors[1].classList.remove('bg-gray-300');
+                connectors[1].classList.add('bg-green-600');
+            }
+            if (currentStep > 2) {
+                connectors[2].classList.remove('bg-gray-300');
+                connectors[2].classList.add('bg-green-600');
+            }
+        }
+
+        // Show step
+        function showStep(stepNumber) {
+            // Hide all steps
+            Object.values(steps).forEach(step => {
+                if (step) step.classList.add('hidden');
+            });
+            
+            // Show current step
+            if (steps[stepNumber]) {
+                steps[stepNumber].classList.remove('hidden');
+                steps[stepNumber].classList.add('slide-in');
+            }
+            
+            currentStep = stepNumber;
+            updateProgress();
+            updateStepIndicators();
+            
+            // Scroll to top of form
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Step 1: Continue
+        document.getElementById('continue-step1')?.addEventListener('click', () => {
+            showStep(2);
+        });
+
+        // Step 2: Back
+        document.getElementById('back-step2')?.addEventListener('click', () => {
+            showStep(1);
+        });
+
+        // Step 2: Continue (with validation)
+        document.getElementById('continue-step2')?.addEventListener('click', () => {
+            const email = document.getElementById('email-verify').value;
+            const password = document.getElementById('password-verify').value;
+            const errorDiv = document.getElementById('verification-error');
+
+            if (!email || !password) {
+                errorDiv.textContent = 'Por favor completa todos los campos requeridos.';
+                errorDiv.classList.remove('hidden');
+                document.getElementById('verification-form').classList.add('shake');
+                setTimeout(() => {
+                    document.getElementById('verification-form').classList.remove('shake');
+                }, 500);
+                return;
+            }
+
+            // Simulate validation (in production, this would be an API call)
+            if (email.length < 5 || password.length < 6) {
+                errorDiv.classList.remove('hidden');
+                document.getElementById('verification-form').classList.add('shake');
+                setTimeout(() => {
+                    document.getElementById('verification-form').classList.remove('shake');
+                }, 500);
+            } else {
+                errorDiv.classList.add('hidden');
+                showStep(3);
+            }
+        });
+
+        // Toggle password visibility
+        document.getElementById('toggle-password')?.addEventListener('click', () => {
+            const passwordInput = document.getElementById('password-verify');
+            const type = passwordInput.type === 'password' ? 'text' : 'password';
+            passwordInput.type = type;
+        });
+
+        // Step 3: Back
+        document.getElementById('back-step3')?.addEventListener('click', () => {
+            showStep(2);
+        });
+
+        // Step 3: Check all confirmations
+        const checkboxes = ['checkbox1', 'checkbox2', 'checkbox3', 'checkbox4'];
+        const confirmationText = document.getElementById('confirmation-text');
+        const deleteBtn = document.getElementById('delete-account-btn');
+
+        function checkDeleteEnabled() {
+            const allChecked = checkboxes.every(id => document.getElementById(id)?.checked);
+            const textCorrect = confirmationText.value === 'ELIMINAR MI CUENTA';
+            
+            if (deleteBtn) {
+                deleteBtn.disabled = !(allChecked && textCorrect);
+            }
+        }
+
+        checkboxes.forEach(id => {
+            document.getElementById(id)?.addEventListener('change', checkDeleteEnabled);
+        });
+
+        confirmationText?.addEventListener('input', checkDeleteEnabled);
+
+        // Final delete action
+        document.getElementById('delete-account-btn')?.addEventListener('click', () => {
+            const allChecked = checkboxes.every(id => document.getElementById(id)?.checked);
+            const textCorrect = confirmationText.value === 'ELIMINAR MI CUENTA';
+            const errorDiv = document.getElementById('final-error');
+            const errorMessage = document.getElementById('final-error-message');
+
+            if (!allChecked) {
+                errorMessage.textContent = 'Debes confirmar todas las casillas antes de continuar.';
+                errorDiv.classList.remove('hidden');
+                return;
+            }
+
+            if (!textCorrect) {
+                errorMessage.textContent = 'Debes escribir exactamente "ELIMINAR MI CUENTA" para confirmar.';
+                errorDiv.classList.remove('hidden');
+                confirmationText.classList.add('shake');
+                setTimeout(() => {
+                    confirmationText.classList.remove('shake');
+                }, 500);
+                return;
+            }
+
+            // Show confirmation dialog
+            if (confirm('¿Estás completamente seguro? Esta acción NO se puede deshacer.')) {
+                // Simulate API call to delete account
+                deleteBtn.disabled = true;
+                deleteBtn.innerHTML = '<svg class="animate-spin h-5 w-5 mx-auto" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>';
+                
+                setTimeout(() => {
+                    // Hide all steps
+                    Object.values(steps).forEach(step => {
+                        if (step) step.classList.add('hidden');
+                    });
+                    
+                    // Show success message
+                    const successMessage = document.getElementById('success-message');
+                    successMessage.classList.remove('hidden');
+                    successMessage.classList.add('slide-in');
+                    
+                    // Update progress to 100%
+                    progressBar.style.width = '100%';
+                    progressBar.classList.remove('bg-red-600');
+                    progressBar.classList.add('bg-green-600');
+                    
+                    // Countdown and redirect
+                    let countdown = 10;
+                    const countdownElement = document.getElementById('countdown');
+                    const countdownInterval = setInterval(() => {
+                        countdown--;
+                        countdownElement.textContent = countdown;
+                        if (countdown <= 0) {
+                            clearInterval(countdownInterval);
+                            window.location.href = '/apps/alra';
+                        }
+                    }, 1000);
+                }, 2000);
+            }
+        });
+
+        // Initialize
+        updateProgress();
+        updateStepIndicators();
+    </script>
+</Layout>
