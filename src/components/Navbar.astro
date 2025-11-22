@@ -1,56 +1,25 @@
 ---
-import Image from "astro/components/Image.astro";
-import WhiteLogo from "../assets/transparent_logo.png";
-import English from "../assets/english.png";
+import { Image } from "astro:assets";
+import BlackLogo from "/public/black_logo.png";
+import ArrowDown from "/public/arrow-down.png";
+import ArrowUp from "/public/arrow-up.png";
 ---
 
-<nav class="absolute top-0 left-0 w-full z-30 flex items-center justify-between px-6 sm:px-12 lg:px-20 py-5 bg-transparent">
-    <div class="w-1/2 sm:w-1/3 lg:w-auto">
-        <a href="/" class="cursor-pointer">
-            <Image class="w-48 sm:w-60" src={WhiteLogo} alt="Large white logo" />
-        </a>
-    </div>
-
-    <div class="hidden lg:flex lg:w-2/3 justify-end">
-        <ul class="flex items-center text-white font-bold">
-            <li><a class="cursor-pointer font-roboto-regular mx-4 hover:underline hover:underline-offset-2" href="/industrias">Industrias</a></li>
-            <li><a class="cursor-pointer font-roboto-regular mx-4 hover:underline hover:underline-offset-2" href="/soluciones">Soluciones</a></li>
-            <li><a class="cursor-pointer font-roboto-regular mx-4 hover:underline hover:underline-offset-2" href="/servicios">Servicios</a></li>
-            <li><a class="cursor-pointer font-roboto-regular mx-4 hover:underline hover:underline-offset-2" href="/sobre_nosotros">Sobre Nosotros</a></li>
-            <li><a class="cursor-pointer font-roboto-bold ml-5 bg-blue-900 px-4 py-2 rounded-lg text-white hover:bg-blue-800 transition-colors duration-300" href="/contacto">Contacto</a></li>
-            <li><a href="/en/"><Image class="w-10 hover:scale-125 ml-5" src={English} alt="english flag" /></a></li>
-        </ul>
-    </div>
-
-    <div class="lg:hidden">
-        <button id="menu-btn" class="text-white focus:outline-none">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-            </svg>
-        </button>
-    </div>
-
-    <div id="menu" class="hidden absolute top-full left-0 w-full bg-gray-900 bg-opacity-95 lg:hidden">
-        <ul class="flex flex-col items-center text-white font-bold py-8">
-            <li class="w-full text-center py-3"><a class="cursor-pointer font-roboto-regular hover:underline hover:underline-offset-2" href="/industrias">Industrias</a></li>
-            <li class="w-full text-center py-3"><a class="cursor-pointer font-roboto-regular hover:underline hover:underline-offset-2" href="/soluciones">Soluciones</a></li>
-            <li class="w-full text-center py-3"><a class="cursor-pointer font-roboto-regular hover:underline hover:underline-offset-2" href="/servicios">Servicios</a></li>
-            <li class="w-full text-center py-3"><a class="cursor-pointer font-roboto-regular hover:underline hover:underline-offset-2" href="/sobre_nosotros">Sobre Nosotros</a></li>
-            <li class="mt-4"><a class="cursor-pointer font-roboto-bold bg-blue-900 px-6 py-3 rounded-lg text-white hover:bg-blue-800 transition-colors duration-300" href="/contacto">Contacto</a></li>
-            <li><a href="/en/"><Image class="w-10 hover:scale-125 text-center mt-4" src={English} alt="english flag" /></a></li>
-        </ul>
-    </div>
+<nav class="flex flex-row items-center w-full px-10 py-3">
+  <div class="w-2/12 flex justify-end">
+    <Image src={BlackLogo} alt="Imagen de logo" class="w-36" />
+  </div>
+  <div class="w-7/12">
+    <ul class="flex flex-row items-center justify-center">
+      <li class="flex flex-row items-center mx-3"><a class="mr-2">Servicios</a><Image src={ArrowDown} alt="dropdown" class="w-3" /></li>
+      <li class="flex flex-row items-center mx-3"><a class="mr-2">Porque nosotros</a><Image src={ArrowDown} alt="dropdown" class="w-3" /></li>
+      <li class="flex flex-row items-center mx-3"><a class="mr-2">Nuestros projectos</a><Image src={ArrowDown} alt="dropdown" class="w-3" /></li>
+      <li class="flex flex-row items-center mx-3"><a class="mr-2">Soluciones</a><Image src={ArrowDown} alt="dropdown" class="w-3" /></li>
+      <li class="flex flex-row items-center mx-3"><a class="mr-2">Precios</a></li>
+    </ul>
+  </div>
+  <div class="w-3/12 flex flex-row items-center">
+    <a class="hover:cursor-pointer mr-3 bg-white px-2 py-3 hover:bg-cyan-600 hover:text-white hover:border-[1px] hover:border-cyan-400 rounded-2xl border-[1px] shadow shadow-gray-500 border-gray-600">Contactanos</a>
+    <a class="bg-cyan-600 px-2 py-3 hover:cursor-pointer hover:bg-cyan-800 rounded-2xl text-white">Agenda una llamada</a>
+  </div>
 </nav>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const menuBtn = document.getElementById('menu-btn');
-        const menu = document.getElementById('menu');
-
-        if (menuBtn && menu) {
-            menuBtn.addEventListener('click', () => {
-                menu.classList.toggle('hidden');
-            });
-        }
-    });
-</script>
