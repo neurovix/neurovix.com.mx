@@ -3,23 +3,170 @@ import { Image } from "astro:assets";
 import BlackLogo from "/public/black_logo.png";
 import ArrowDown from "/public/arrow-down.png";
 import ArrowUp from "/public/arrow-up.png";
+import MobileDevelopment from "/public/assets/mobile_development.png";
+import WebDevelopment from "/public/assets/web_development.png";
+import ArtificialIntelligence from "/public/assets/artificial_intelligence.png";
+import International from "/public/assets/company.png";
+import Local from "/public/assets/local.png";
 ---
 
 <nav class="flex flex-row items-center w-full px-10 py-3">
-  <div class="w-2/12 flex justify-end">
-    <Image src={BlackLogo} alt="Imagen de logo" class="w-36" />
-  </div>
+  <a href="/" class="w-2/12 flex justify-end">
+    <Image src={BlackLogo} alt="logo image" class="w-40" />
+  </a>
   <div class="w-7/12">
-    <ul class="flex flex-row items-center justify-center">
-      <li class="flex flex-row items-center mx-3"><a class="mr-2">Servicios</a><Image src={ArrowDown} alt="dropdown" class="w-3" /></li>
-      <li class="flex flex-row items-center mx-3"><a class="mr-2">Porque nosotros</a><Image src={ArrowDown} alt="dropdown" class="w-3" /></li>
-      <li class="flex flex-row items-center mx-3"><a class="mr-2">Nuestros projectos</a><Image src={ArrowDown} alt="dropdown" class="w-3" /></li>
-      <li class="flex flex-row items-center mx-3"><a class="mr-2">Soluciones</a><Image src={ArrowDown} alt="dropdown" class="w-3" /></li>
-      <li class="flex flex-row items-center mx-3"><a class="mr-2">Precios</a></li>
+    <ul class="flex flex-row items-center justify-center font-medium">
+      <li
+        class="flex flex-row items-center mx-3 relative group"
+        id="services_item"
+      >
+        <a href="/servicios" class="mr-2">Servicios</a>
+        <Image src={ArrowDown} alt="dropdown" class="w-3" />
+        <div
+          class="absolute top-full left-0 mt-2 hidden z-50 bg-black text-white p-6 w-[600px] rounded-xl shadow-lg"
+          id="services_modal"
+        >
+          <a href="/desarrollo_movil" class="hover:bg-gray-800 hover:rounded p-2 flex flex-row items-center">
+            <div class="bg-gray-700 p-2 rounded mr-3">
+              <Image
+                class="w-9"
+                src={MobileDevelopment}
+                alt="mobile development icon"
+              />
+            </div>
+            <div>
+              <h1 class="font-bold text-base">Desarrollo movil</h1>
+              <p class="text-xs">
+                Creamos ideas en aplicaciones mobiles reales rapidamente. Desde
+                MVP hasta aplicaciones escalables.
+              </p>
+            </div>
+          </a>
+          <a href="/desarrollo_web" class="hover:bg-gray-800 hover:rounded p-2 flex flex-row items-center mt-3">
+            <div class="bg-gray-700 p-2 rounded mr-3">
+              <Image
+                class="w-9"
+                src={WebDevelopment}
+                alt="web development icon"
+              />
+            </div>
+            <div>
+              <h1 class="font-bold text-base">Desarrollo web</h1>
+              <p class="text-xs">
+                Creamos ideas en aplicaciones web reales rapidamente. Desde MVP
+                hasta aplicaciones escalables.
+              </p>
+            </div>
+          </a>
+          <a href="/automatizaciones_ia" class="hover:bg-gray-800 hover:rounded p-2 flex flex-row items-center mt-3">
+            <div class="bg-gray-700 p-2 rounded mr-3">
+              <Image
+                class="w-8"
+                src={ArtificialIntelligence}
+                alt="artificial intelligence icon"
+              />
+            </div>
+            <div>
+              <h1 class="font-bold text-base">Inteligencia Artificial</h1>
+              <p class="text-xs">
+                Desarrollamos soluciones de IA innovadoras y escalables para tu
+                negocio.
+              </p>
+            </div>
+          </a>
+        </div>
+      </li>
+      <li class="flex flex-row items-center mx-3 relative group">
+        <a href="/porque_nosotros" class="mr-2 hover:font-bold">Porque nosotros</a>
+      </li>
+      <li class="flex flex-row items-center mx-3 relative group" id="ourProjects_item">
+        <a href="/nuestros_projectos" class="mr-2">Nuestros projectos</a><Image
+          src={ArrowDown}
+          alt="dropdown"
+          class="w-3"
+        />
+        <div
+          class="absolute top-full left-0 mt-2 hidden z-50 bg-black text-white p-6 w-[500px] rounded-xl shadow-lg"
+          id="ourProjects_modal"
+        >
+          <a href="/proyectos/empresas_nacionales" class="hover:bg-gray-800 hover:rounded p-2 flex flex-row items-center">
+            <div class="bg-gray-700 p-2 rounded mr-3">
+              <Image
+                class="w-11"
+                src={Local}
+                alt="mobile development icon"
+              />
+            </div>
+            <div>
+              <h1 class="font-bold text-base">Empresas Nacionales</h1>
+              <p class="text-xs">
+                Mira los trabajos que hemos realizado para empresas locales o dentro del territorio nacional mexicano.
+              </p>
+            </div>
+          </a>
+          <a href="/proyectos/empresas_internacionales" class="hover:bg-gray-800 hover:rounded p-2 flex flex-row items-center mt-3">
+            <div class="bg-gray-700 p-2 rounded mr-3">
+              <Image
+                class="w-9"
+                src={International}
+                alt="web development icon"
+              />
+            </div>
+            <div>
+              <h1 class="font-bold text-base">Empresas Internacionales</h1>
+              <p class="text-xs">
+                Algo de nuestro trabajo que hemos desarrollado para empresas internacionales.
+              </p>
+            </div>
+          </a>
+        </div>
+      </li>
+      <li class="flex flex-row items-center mx-3 relative group">
+        <a href="/soluciones" class="mr-2 hover:font-bold">Soluciones</a>
+      </li>
+      <li class="flex flex-row items-center mx-3 hover:font-bold">
+        <a href="/precios" class="mr-2">Precios</a>
+      </li>
     </ul>
   </div>
   <div class="w-3/12 flex flex-row items-center">
-    <a class="hover:cursor-pointer mr-3 bg-white px-2 py-3 hover:bg-cyan-600 hover:text-white hover:border-[1px] hover:border-cyan-400 rounded-2xl border-[1px] shadow shadow-gray-500 border-gray-600">Contactanos</a>
-    <a class="bg-cyan-600 px-2 py-3 hover:cursor-pointer hover:bg-cyan-800 rounded-2xl text-white">Agenda una llamada</a>
+    <a
+      href="/contacto"
+      class="hover:cursor-pointer mr-3 bg-white px-2 py-3 hover:bg-blue-900 hover:text-white rounded-2xl shadow shadow-gray-500"
+      >Contactanos</a
+    >
+    <a
+      href="tel:+528448580335"
+      class="bg-blue-900 px-2 py-3 hover:cursor-pointer hover:bg-cyan-700 rounded-2xl text-white"
+      >Agenda una llamada</a
+    >
   </div>
 </nav>
+
+<script>
+  function attachDropdown(itemId: string, modalId: string) {
+    const item = document.getElementById(itemId);
+    const modal = document.getElementById(modalId);
+    if (!item || !modal) return;
+
+    let timeout: any;
+    const show = () => {
+      modal.classList.remove("hidden");
+      clearTimeout(timeout);
+    };
+    const hide = () => {
+      timeout = setTimeout(() => {
+        modal.classList.add("hidden");
+      }, 100);
+    };
+
+    item.addEventListener("mouseenter", show);
+    item.addEventListener("mouseleave", hide);
+    modal.addEventListener("mouseenter", show);
+    modal.addEventListener("mouseleave", hide);
+  }
+
+  // Attach to all dropdowns
+  attachDropdown("services_item", "services_modal");
+  attachDropdown("ourProjects_item", "ourProjects_modal");
+</script>

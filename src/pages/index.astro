@@ -1,10 +1,49 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
+import AlraPlastic from "/public/company/alra_plastic/alra_plastic_logo.png";
+import MbsMexico from "/public/company/mbsconstrucciones/mbs_logo.webp";
+import { Image } from "astro:assets";
 ---
 
 <Layout>
-  <section class="h-screen bg-radial-[at_40%_90%] from-sky-100 via-cyan-200 to-sky-100 to-90%">
+  <section
+    class="bg-radial-[at_40%_90%] from-sky-100 via-cyan-200 to-sky-100 to-90%"
+  >
     <Navbar />
+    <div class="flex items-center justify-center h-full pt-28 pb-20 px-40">
+      <div class="flex flex-col">
+        <h1 class="text-5xl font-bold text-center">
+          Desarrollo de <span class="text-blue-900 font-extrabold"
+            >&lt;software /&gt;</span
+          > a la medida
+        </h1>
+        <h3 class="text-center mt-6 text-lg font-light px-36">
+          Desarrollo de aplicaciones moviles o aplicaciones web a la medida,
+          automatizacion de procesos con inteligencia artificial
+        </h3>
+        <div class="w-full flex justify-center mt-10">
+          <a
+            href="/nuestros_projectos"
+            class="bg-gradient-to-r from-blue-600 to-blue-900 hover:font-bold px-5 py-3 rounded-2xl mx-1 text-white"
+            >NUESTROS PROJECTOS</a
+          >
+          <a
+            href="/servicios"
+            class="bg-white border-[1px] border-gray-400 hover:bg-gray-100 px-5 py-3 rounded-2xl mx-1"
+            >VER SERVICIOS</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center pb-10">
+      <div class="flex flex-col">
+        <h1 class="text-base font-light text-center">Empresas que confian en nosotros</h1>
+        <div class="flex flex-row mt-5 items-center">
+          <Image src={AlraPlastic} class="w-28 h-36 mx-5" alt="alra plastic logo" />
+          <Image src={MbsMexico} class="w-72 h-24 mx-5" alt="mbs mexico logo" />
+        </div>
+      </div>
+    </div>
   </section>
 </Layout>
