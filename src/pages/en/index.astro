@@ -13,6 +13,11 @@ import Automation from "../../assets/nodos_gray.png";
 import ArtificialIntelligence from "../../assets/ia_gray.png";
 import Cloud from "../../assets/nube_gray.png";
 import FooterEn from "../../components/FooterEn.astro";
+
+import AGMaquinado from "../../assets/companies/ag_maquinado.webp";
+import AlraPlastic from "../../assets/companies/alra_plastic.png";
+import MbsConstrucciones from "../../assets/companies/mbs_construcciones.webp";
+import SuperMarket from "../../assets/companies/supermarket-ml.png";
 ---
 
 <Layout>
@@ -29,7 +34,8 @@ import FooterEn from "../../components/FooterEn.astro";
           Software Development and AI Automations
         </h1>
         <p class="text-sm lg:text-xl font-roboto-regular mt-4 drop-shadow-md">
-          Boost your company's efficiency with custom software or artificial intelligence
+          Boost your company's efficiency with custom software or artificial
+          intelligence
         </p>
         <a
           href="/services"
@@ -52,14 +58,18 @@ import FooterEn from "../../components/FooterEn.astro";
           />
           <h2 class="text-2xl font-bold mb-4">Software Development</h2>
           <p class="text-base">
-            We build custom platforms and systems fully tailored to your company's or institution's needs. From mobile apps and web apps to internal management systems.
+            We build custom platforms and systems fully tailored to your
+            company's or institution's needs. From mobile apps and web apps to
+            internal management systems.
           </p>
         </div>
         <div>
           <Image src={IA} class="mx-auto pb-5" alt="AI Automations" />
           <h2 class="text-2xl font-bold mb-4">AI Automations</h2>
           <p class="text-base">
-            Save hundreds of hours per month by automating repetitive tasks: report generation, message responses, database updates, and more—with integrated AI.
+            Save hundreds of hours per month by automating repetitive tasks:
+            report generation, message responses, database updates, and
+            more—with integrated AI.
           </p>
         </div>
         <div class="lg:border-l-2 lg:pl-10">
@@ -70,7 +80,9 @@ import FooterEn from "../../components/FooterEn.astro";
           />
           <h2 class="text-2xl font-bold mb-4">Local AI Installation</h2>
           <p class="text-base">
-            We configure language models and AI that run on your own servers or computers, without relying on the cloud. More control, privacy, and no recurring costs.
+            We configure language models and AI that run on your own servers or
+            computers, without relying on the cloud. More control, privacy, and
+            no recurring costs.
           </p>
         </div>
       </div>
@@ -96,7 +108,8 @@ import FooterEn from "../../components/FooterEn.astro";
               Web Development
             </h2>
             <p class="text-sm text-gray-600">
-              Fast, secure, and scalable web apps tailored to your business needs.
+              Fast, secure, and scalable web apps tailored to your business
+              needs.
             </p>
           </div>
 
@@ -112,7 +125,8 @@ import FooterEn from "../../components/FooterEn.astro";
               Mobile Apps
             </h2>
             <p class="text-sm text-gray-600">
-              Android and iOS apps with a smooth and professional user experience.
+              Android and iOS apps with a smooth and professional user
+              experience.
             </p>
           </div>
 
@@ -144,7 +158,8 @@ import FooterEn from "../../components/FooterEn.astro";
               Process Automation
             </h2>
             <p class="text-sm text-gray-600">
-              Eliminate repetitive tasks with efficient and customized automations.
+              Eliminate repetitive tasks with efficient and customized
+              automations.
             </p>
           </div>
 
@@ -160,7 +175,8 @@ import FooterEn from "../../components/FooterEn.astro";
               Artificial Intelligence
             </h2>
             <p class="text-sm text-gray-600">
-              Enhance your operations with AI models that learn and optimize your workflow.
+              Enhance your operations with AI models that learn and optimize
+              your workflow.
             </p>
           </div>
 
@@ -172,8 +188,61 @@ import FooterEn from "../../components/FooterEn.astro";
               Local or Cloud Deployment
             </h2>
             <p class="text-sm text-gray-600">
-              Deploy solutions on local servers or in the cloud depending on your needs.
+              Deploy solutions on local servers or in the cloud depending on
+              your needs.
             </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-black">
+      <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-20">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl lg:text-5xl font-bold text-white mb-4">
+            Customers who trust us
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            We work with leaders in the manufacturing, recycling, construction, and commercial industries.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+          <div
+            class="bg-white rounded-xl p-6 hover:transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-blue-500/50"
+          >
+            <Image
+              src={AGMaquinado}
+              alt="Caterpillar"
+              class="w-full h-20 object-contain"
+            />
+          </div>
+          <div
+            class="bg-white rounded-xl p-6 hover:transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-blue-500/50"
+          >
+            <Image
+              src={AlraPlastic}
+              alt="Yanfeng"
+              class="w-full h-20 object-contain"
+            />
+          </div>
+          <div
+            class="bg-white rounded-xl p-6 hover:transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-blue-500/50"
+          >
+            <Image
+              src={MbsConstrucciones}
+              alt="Tetakawi"
+              class="w-full h-20 object-contain"
+            />
+          </div>
+          <div
+            class="bg-white rounded-xl p-6 hover:transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-blue-500/50"
+          >
+            <Image
+              src={SuperMarket}
+              alt="Gaviones"
+              class="w-full h-20 object-contain"
+            />
           </div>
         </div>
       </div>
@@ -192,7 +261,8 @@ import FooterEn from "../../components/FooterEn.astro";
           >
             <h3 class="text-xl font-bold mb-2">Weekly Payroll Generation</h3>
             <p class="text-sm">
-              Automate payroll calculation and delivery based on attendance, shifts, and settings.
+              Automate payroll calculation and delivery based on attendance,
+              shifts, and settings.
             </p>
           </div>
 
@@ -201,7 +271,8 @@ import FooterEn from "../../components/FooterEn.astro";
           >
             <h3 class="text-xl font-bold mb-2">Attendance Tracking</h3>
             <p class="text-sm">
-              Manage employee check-ins and check-outs from mobile or tablet with automatic validation.
+              Manage employee check-ins and check-outs from mobile or tablet
+              with automatic validation.
             </p>
           </div>
 
@@ -210,7 +281,8 @@ import FooterEn from "../../components/FooterEn.astro";
           >
             <h3 class="text-xl font-bold mb-2">Invoice & Resume Parser</h3>
             <p class="text-sm">
-              Extract important data from invoice or resume PDFs and organize it in your database.
+              Extract important data from invoice or resume PDFs and organize it
+              in your database.
             </p>
           </div>
 
@@ -219,7 +291,8 @@ import FooterEn from "../../components/FooterEn.astro";
           >
             <h3 class="text-xl font-bold mb-2">WhatsApp Chatbots</h3>
             <p class="text-sm">
-              Automatically respond to FAQs, generate quotes, or follow up with customers.
+              Automatically respond to FAQs, generate quotes, or follow up with
+              customers.
             </p>
           </div>
         </div>

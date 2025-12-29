@@ -3,15 +3,21 @@ import NavbarSP from "../../components/NavbarSP.astro";
 import Layout from "../../layouts/Layout.astro";
 import Image from "astro/components/Image.astro";
 import Hero from "../../assets/soluciones_hero.png";
-
-import KimberlyClark from "../../assets/companies/kimberly-clark.png";
-import SuperMarketML from "../../assets/companies/supermarket-ml-services.png";
 import FooterEn from "../../components/FooterEn.astro";
 
-// Scalable array: just add more logos here
+import KimberlyClark from "../../assets/companies/kimberly-clark.png";
+import AGMaquinado from "../../assets/companies/ag_maquinado.webp";
+import AlraPlastic from "../../assets/companies/alra_plastic.png";
+import MbsConstrucciones from "../../assets/companies/mbs_construcciones.webp";
+import SuperMarket from "../../assets/companies/supermarket-ml.png";
+
+// Scalable array: just add more logos here ...
 const clientes = [
-  { src: KimberlyClark, alt: "Kimberly Clark", href: "/en/companies/kimberly" },
-  { src: SuperMarketML, alt: "Super Market ML", href: "/en/companies/supermarketml" },
+  { src: KimberlyClark, alt: "Kimberly Clark", href: "/empresas/kimberly" },
+  { src: SuperMarket, alt: "Super Market ML", href: "/empresas/supermarketml" },
+  { src: AGMaquinado, alt: "A | G Maquinado", href: "" },
+  { src: AlraPlastic, alt: "Alra Plastic Reciclyng", href: "" },
+  { src: MbsConstrucciones, alt: "MBS Construcciones", href: "" },
 ];
 ---
 
@@ -38,8 +44,8 @@ const clientes = [
         <p
           class="text-lg md:text-xl font-roboto-regular mt-4 drop-shadow-md max-w-3xl"
         >
-          We automate processes, improve efficiency and create
-          intelligent solutions specific to your industry.
+          We automate processes, improve efficiency and create intelligent
+          solutions specific to your industry.
         </p>
       </div>
     </section>
@@ -54,112 +60,127 @@ const clientes = [
           Solutions adapted to your industry
         </h2>
         <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-12">
-          Whether you're in manufacturing, healthcare, education or another sector, we
-          help you solve real problems with real technology:
+          Whether you're in manufacturing, healthcare, education or another
+          sector, we help you solve real problems with real technology:
           automation, artificial intelligence and custom development.
         </p>
 
         <!-- Section: Our clients -->
-        <div class="mb-16">
-          <h3 class="text-4xl font-roboto-regular font-bold mb-8 text-gray-800 text-center">
-            Our clients
-          </h3>
-          <div class="overflow-hidden relative w-full">
-            <div class="flex w-max animate-scroll-left gap-8 md:gap-16 items-center">
-              {[...clientes, ...clientes].map(({ src, alt, href }, index) => (
-                <div
-                  class="flex-shrink-0 w-36 h-20 sm:w-44 sm:h-24 md:w-68 md:h-40 flex items-center justify-center bg-white p-4"
-                  key={index}
-                >
-                  <a href={href}><img src={src.src} alt={alt} class="object-contain h-full w-full" /></a>
+        <div class="overflow-hidden relative w-full">
+          <div class="flex w-max animate-scroll-left gap-12 items-center">
+            {
+              [...clientes, ...clientes].map(({ src, alt, href }, index) => (
+                <div class="shrink-0 h-24 sm:h-28 md:h-32 px-6 flex items-center justify-center bg-white">
+                  <a href={href} class="h-full flex items-center">
+                    <img
+                      src={src.src}
+                      alt={alt}
+                      class="h-full max-w-[160px] object-contain"
+                      loading="lazy"
+                    />
+                  </a>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <style>
-          @keyframes scroll-left {
-            0% {
-              transform: translateX(0);
+              ))
             }
-            100% {
-              transform: translateX(-50%);
-            }
-          }
-
-          .animate-scroll-left {
-            animation: scroll-left 25s linear infinite;
-          }
-
-          .animate-scroll-left:hover {
-            animation-play-state: paused;
-          }
-        </style>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-left">
-          <div class="bg-blue-50 p-6 rounded-2xl shadow hover:shadow-lg transition">
-            <h3 class="text-xl font-bold mb-2">Manufacturing</h3>
-            <p class="text-sm mb-4">
-              Automate reports, quality control and real-time production.
-            </p>
-          </div>
-          <div class="bg-blue-50 p-6 rounded-2xl shadow hover:shadow-lg transition">
-            <h3 class="text-xl font-bold mb-2">Healthcare</h3>
-            <p class="text-sm mb-4">
-              Smart scheduling, automatic reminders and patient bots.
-            </p>
-          </div>
-          <div class="bg-blue-50 p-6 rounded-2xl shadow hover:shadow-lg transition">
-            <h3 class="text-xl font-bold mb-2">Education</h3>
-            <p class="text-sm mb-4">
-              Custom platforms, assessment automation and attendance.
-            </p>
-          </div>
-          <div class="bg-blue-50 p-6 rounded-2xl shadow hover:shadow-lg transition">
-            <h3 class="text-xl font-bold mb-2">Logistics and Transportation</h3>
-            <p class="text-sm mb-4">
-              Optimized routes, controlled deliveries and real-time tracking.
-            </p>
-          </div>
-          <div class="bg-blue-50 p-6 rounded-2xl shadow hover:shadow-lg transition">
-            <h3 class="text-xl font-bold mb-2">Commerce and Retail</h3>
-            <p class="text-sm mb-4">
-              Chatbots, automated inventory and intelligent billing.
-            </p>
-          </div>
-          <div class="bg-blue-50 p-6 rounded-2xl shadow hover:shadow-lg transition">
-            <h3 class="text-xl font-bold mb-2">Public Sector</h3>
-            <p class="text-sm mb-4">
-              Digitize procedures, use AI for citizen service and staff control.
-            </p>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- Section: Custom solutions -->
-    <section
-      class="bg-blue-900 text-white py-20 px-6 md:px-20 text-center font-roboto-regular"
-    >
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">
-          We create custom solutions for your company
-        </h2>
-        <p class="text-lg md:text-xl mb-8 text-blue-100">
-          Does your company have unique processes or face specific challenges?
-          We can help you develop a completely
-          customized solution that adapts to your workflows, systems and vision.
-        </p>
-        <a
-          href="/en/contact"
-          class="px-6 py-3 bg-white text-blue-900 rounded-lg font-bold hover:bg-gray-200 transition"
+      <style>
+        @keyframes scroll-left {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
+        .animate-scroll-left {
+          animation: scroll-left 25s linear infinite;
+        }
+
+        .animate-scroll-left:hover {
+          animation-play-state: paused;
+        }
+      </style>
+
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-left mt-10"
+      >
+        <div
+          class="bg-blue-50 p-6 rounded-2xl shadow hover:shadow-lg transition"
         >
-          LET'S TALK ABOUT YOUR PROJECT
-        </a>
+          <h3 class="text-xl font-bold mb-2">Manufacturing</h3>
+          <p class="text-sm mb-4">
+            Automate reports, quality control and real-time production.
+          </p>
+        </div>
+        <div
+          class="bg-blue-50 p-6 rounded-2xl shadow hover:shadow-lg transition"
+        >
+          <h3 class="text-xl font-bold mb-2">Healthcare</h3>
+          <p class="text-sm mb-4">
+            Smart scheduling, automatic reminders and patient bots.
+          </p>
+        </div>
+        <div
+          class="bg-blue-50 p-6 rounded-2xl shadow hover:shadow-lg transition"
+        >
+          <h3 class="text-xl font-bold mb-2">Education</h3>
+          <p class="text-sm mb-4">
+            Custom platforms, assessment automation and attendance.
+          </p>
+        </div>
+        <div
+          class="bg-blue-50 p-6 rounded-2xl shadow hover:shadow-lg transition"
+        >
+          <h3 class="text-xl font-bold mb-2">Logistics and Transportation</h3>
+          <p class="text-sm mb-4">
+            Optimized routes, controlled deliveries and real-time tracking.
+          </p>
+        </div>
+        <div
+          class="bg-blue-50 p-6 rounded-2xl shadow hover:shadow-lg transition"
+        >
+          <h3 class="text-xl font-bold mb-2">Commerce and Retail</h3>
+          <p class="text-sm mb-4">
+            Chatbots, automated inventory and intelligent billing.
+          </p>
+        </div>
+        <div
+          class="bg-blue-50 p-6 rounded-2xl shadow hover:shadow-lg transition"
+        >
+          <h3 class="text-xl font-bold mb-2">Public Sector</h3>
+          <p class="text-sm mb-4">
+            Digitize procedures, use AI for citizen service and staff control.
+          </p>
+        </div>
       </div>
     </section>
-
-    <FooterEn />
   </main>
+
+  <!-- Section: Custom solutions -->
+  <section
+    class="bg-blue-900 text-white py-20 px-6 md:px-20 text-center font-roboto-regular"
+  >
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        We create custom solutions for your company
+      </h2>
+      <p class="text-lg md:text-xl mb-8 text-blue-100">
+        Does your company have unique processes or face specific challenges? We
+        can help you develop a completely customized solution that adapts to
+        your workflows, systems and vision.
+      </p>
+      <a
+        href="/en/contact"
+        class="px-6 py-3 bg-white text-blue-900 rounded-lg font-bold hover:bg-gray-200 transition"
+      >
+        LET'S TALK ABOUT YOUR PROJECT
+      </a>
+    </div>
+  </section>
+
+  <FooterEn />
 </Layout>
