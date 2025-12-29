@@ -6,12 +6,18 @@ import Image from "astro/components/Image.astro";
 import Hero from "../assets/soluciones_hero.png";
 
 import KimberlyClark from "../assets/companies/kimberly-clark.png";
-import SuperMarketML from "../assets/companies/supermarket-ml-services.png";
+import AGMaquinado from "../assets/companies/ag_maquinado.webp";
+import AlraPlastic from "../assets/companies/alra_plastic.png";
+import MbsConstrucciones from "../assets/companies/mbs_construcciones.webp";
+import SuperMarket from "../assets/companies/supermarket-ml.png";
 
 // Arreglo escalable: solo agrega más logos aquí
 const clientes = [
   { src: KimberlyClark, alt: "Kimberly Clark", href: "/empresas/kimberly" },
-  { src: SuperMarketML, alt: "Super Market ML", href: "/empresas/supermarketml" },
+  { src: SuperMarket, alt: "Super Market ML", href: "/empresas/supermarketml" },
+  { src: AGMaquinado, alt: "A | G Maquinado", href: "" },
+  { src: AlraPlastic, alt: "Alra Plastic Reciclyng", href: "" },
+  { src: MbsConstrucciones, alt: "MBS Construcciones", href: "" },
 ];
 ---
 
@@ -61,19 +67,30 @@ const clientes = [
 
         <!-- Sección: Nuestros clientes -->
         <div class="mb-16">
-          <h3 class="text-4xl font-roboto-regular font-bold mb-8 text-gray-800 text-center">
+          <h3
+            class="text-4xl font-roboto-regular font-bold mb-8 text-gray-800 text-center"
+          >
             Nuestros clientes
           </h3>
+
           <div class="overflow-hidden relative w-full">
-            <div class="flex w-max animate-scroll-left gap-8 md:gap-16 items-center">
-              {[...clientes, ...clientes].map(({ src, alt, href }, index) => (
-                <div
-                  class="flex-shrink-0 w-36 h-20 sm:w-44 sm:h-24 md:w-68 md:h-40 flex items-center justify-center bg-white p-4"
-                  key={index}
-                >
-                  <a href={href}><img src={src.src} alt={alt} class="object-contain h-full w-full" /></a>
-                </div>
-              ))}
+            <div class="flex w-max animate-scroll-left gap-12 items-center">
+              {
+                [...clientes, ...clientes].map(({ src, alt, href }, index) => (
+                  <div
+                    class="shrink-0 h-24 sm:h-28 md:h-32 px-6 flex items-center justify-center bg-white"
+                  >
+                    <a href={href} class="h-full flex items-center">
+                      <img
+                        src={src.src}
+                        alt={alt}
+                        class="h-full max-w-[160px] object-contain"
+                        loading="lazy"
+                      />
+                    </a>
+                  </div>
+                ))
+              }
             </div>
           </div>
         </div>
@@ -97,41 +114,60 @@ const clientes = [
           }
         </style>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-left">
-          <div class="bg-blue-50 p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-left"
+        >
+          <div
+            class="bg-blue-50 p-6 rounded-2xl shadow hover:shadow-lg transition"
+          >
             <h3 class="text-xl font-bold mb-2">Manufactura</h3>
             <p class="text-sm mb-4">
-              Automatiza reportes, control de calidad y producción en tiempo real.
+              Automatiza reportes, control de calidad y producción en tiempo
+              real.
             </p>
           </div>
-          <div class="bg-blue-50 p-6 rounded-2xl shadow hover:shadow-lg transition">
+          <div
+            class="bg-blue-50 p-6 rounded-2xl shadow hover:shadow-lg transition"
+          >
             <h3 class="text-xl font-bold mb-2">Salud</h3>
             <p class="text-sm mb-4">
-              Agenda inteligente, recordatorios automáticos y bots para pacientes.
+              Agenda inteligente, recordatorios automáticos y bots para
+              pacientes.
             </p>
           </div>
-          <div class="bg-blue-50 p-6 rounded-2xl shadow hover:shadow-lg transition">
+          <div
+            class="bg-blue-50 p-6 rounded-2xl shadow hover:shadow-lg transition"
+          >
             <h3 class="text-xl font-bold mb-2">Educación</h3>
             <p class="text-sm mb-4">
-              Plataformas personalizadas, automatización de evaluaciones y asistencia.
+              Plataformas personalizadas, automatización de evaluaciones y
+              asistencia.
             </p>
           </div>
-          <div class="bg-blue-50 p-6 rounded-2xl shadow hover:shadow-lg transition">
+          <div
+            class="bg-blue-50 p-6 rounded-2xl shadow hover:shadow-lg transition"
+          >
             <h3 class="text-xl font-bold mb-2">Logística y Transporte</h3>
             <p class="text-sm mb-4">
-              Rutas optimizadas, entregas controladas y seguimiento en tiempo real.
+              Rutas optimizadas, entregas controladas y seguimiento en tiempo
+              real.
             </p>
           </div>
-          <div class="bg-blue-50 p-6 rounded-2xl shadow hover:shadow-lg transition">
+          <div
+            class="bg-blue-50 p-6 rounded-2xl shadow hover:shadow-lg transition"
+          >
             <h3 class="text-xl font-bold mb-2">Comercio y Retail</h3>
             <p class="text-sm mb-4">
               Chatbots, inventario automatizado y facturación inteligente.
             </p>
           </div>
-          <div class="bg-blue-50 p-6 rounded-2xl shadow hover:shadow-lg transition">
+          <div
+            class="bg-blue-50 p-6 rounded-2xl shadow hover:shadow-lg transition"
+          >
             <h3 class="text-xl font-bold mb-2">Sector Público</h3>
             <p class="text-sm mb-4">
-              Digitaliza trámites, usa IA para atención ciudadana y controla personal.
+              Digitaliza trámites, usa IA para atención ciudadana y controla
+              personal.
             </p>
           </div>
         </div>

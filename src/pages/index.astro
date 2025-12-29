@@ -13,6 +13,11 @@ import Automatizacion from "../assets/nodos_gray.png";
 import InteligenciaArtificial from "../assets/ia_gray.png";
 import Cloud from "../assets/nube_gray.png";
 import Footer from "../components/Footer.astro";
+
+import AGMaquinado from "../assets/companies/ag_maquinado.webp";
+import AlraPlastic from "../assets/companies/alra_plastic.png";
+import MbsConstrucciones from "../assets/companies/mbs_construcciones.webp";
+import SuperMarket from "../assets/companies/supermarket-ml.png";
 ---
 
 <Layout>
@@ -192,6 +197,58 @@ import Footer from "../components/Footer.astro";
       </div>
     </section>
 
+    <section class="py-20 bg-black">
+      <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-20">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl lg:text-5xl font-bold text-white mb-4">
+            Clientes que Confían en Nosotros
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            Trabajamos con lideres de la industria manufacturera, reciclaje, construccion y comercial.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+          <div
+            class="bg-white rounded-xl p-6 hover:transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-blue-500/50"
+          >
+            <Image
+              src={AGMaquinado}
+              alt="Caterpillar"
+              class="w-full h-20 object-contain"
+            />
+          </div>
+          <div
+            class="bg-white rounded-xl p-6 hover:transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-blue-500/50"
+          >
+            <Image
+              src={AlraPlastic}
+              alt="Yanfeng"
+              class="w-full h-20 object-contain"
+            />
+          </div>
+          <div
+            class="bg-white rounded-xl p-6 hover:transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-blue-500/50"
+          >
+            <Image
+              src={MbsConstrucciones}
+              alt="Tetakawi"
+              class="w-full h-20 object-contain"
+            />
+          </div>
+          <div
+            class="bg-white rounded-xl p-6 hover:transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-blue-500/50"
+          >
+            <Image
+              src={SuperMarket}
+              alt="Gaviones"
+              class="w-full h-20 object-contain"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section
       class="px-6 md:px-20 py-16 bg-white text-gray-900 font-roboto-regular"
     >
@@ -213,10 +270,9 @@ import Footer from "../components/Footer.astro";
           <div
             class="bg-blue-100 p-6 rounded-2xl shadow-md hover:shadow-lg transition"
           >
-            <h3 class="text-xl font-bold mb-2">Registro de Asistencias</h3>
+            <h3 class="text-xl font-bold mb-2">App para seguimiento de lotes</h3>
             <p class="text-sm">
-              Controla entradas y salidas de empleados desde celular o tablet,
-              con validación automática.
+              Controla registro de lotes de plastico, inventarios, clientes y materiales desde una aplicacion movil, con utilizacion de codigos qr y reportes generados automaticamente.
             </p>
           </div>
 
