@@ -1,0 +1,244 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+import Navbar from "../../../../components/Navbar.astro";
+const currentYear = new Date().getFullYear();
+---
+
+<Layout title="TINDERTEC - Conecta con estudiantes de tu campus">
+  <main class="min-h-screen bg-gray-900 text-white">
+    <Navbar />
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-gray-900 via-red-900/20 to-pink-900/20 py-20 px-4 overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(239,68,68,0.3),transparent_50%)] opacity-50"></div>
+      <div class="relative max-w-7xl mx-auto text-center">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-red-400 via-pink-400 to-orange-400 bg-clip-text text-transparent animate-pulse">
+          Conecta con estudiantes de tu campus
+        </h1>
+        <p class="text-xl md:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto">
+          Descubre conexiones auténticas en el TecNM Campus Saltillo. Amistad, citas o networking – todo en un entorno seguro y exclusivo.
+        </p>
+        <button class="bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 text-white px-8 py-4 rounded-full text-lg font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg shadow-red-500/25">
+          Próximamente en App Stores
+        </button>
+      </div>
+    </section>
+
+    <!-- ¿Qué es TINDERTEC? -->
+    <section class="py-20 px-4 bg-gray-800">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-pink-400 to-orange-400 bg-clip-text text-transparent">
+          ¿Qué es TINDERTEC?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+              TINDERTEC es una aplicación de citas y conexión social diseñada <strong>únicamente para la comunidad estudiantil del TecNM Campus Saltillo</strong>. Facilita que los alumnos se conozcan, hagan match y conecten por intereses, carreras y afinidades en un entorno seguro, privado y 100% universitario.
+            </p>
+            <p class="text-lg text-gray-300">
+              Crea conexiones auténticas: amistad, citas, networking o simplemente conocer personas con gustos similares. ¡Adiós a perfiles falsos!
+            </p>
+          </div>
+          <div class="relative">
+            <div class="bg-gradient-to-br from-red-500/10 to-pink-500/10 rounded-2xl p-8 h-full">
+              <svg class="w-full h-64 text-pink-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ¿Cómo funciona? -->
+    <section class="py-20 px-4 bg-gray-900">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-white">
+          ¿Cómo funciona?
+        </h2>
+        <div class="grid md:grid-cols-4 gap-6">
+          <div class="text-center group">
+            <div class="bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-xl p-6 mb-4 transform group-hover:scale-105 transition-all duration-300">
+              <span class="text-4xl">1</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Regístrate</h3>
+            <p class="text-gray-400">Con tu correo institucional del TecNM.</p>
+          </div>
+          <div class="text-center group">
+            <div class="bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-xl p-6 mb-4 transform group-hover:scale-105 transition-all duration-300">
+              <span class="text-4xl">2</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Crea tu perfil</h3>
+            <p class="text-gray-400">Personalízalo con fotos, intereses y más.</p>
+          </div>
+          <div class="text-center group">
+            <div class="bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-xl p-6 mb-4 transform group-hover:scale-105 transition-all duration-300">
+              <span class="text-4xl">3</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Haz match</h3>
+            <p class="text-gray-400">Swipe y conecta con likes mutuos.</p>
+          </div>
+          <div class="text-center group">
+            <div class="bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-xl p-6 mb-4 transform group-hover:scale-105 transition-all duration-300">
+              <span class="text-4xl">4</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Chatea y conecta</h3>
+            <p class="text-gray-400">Habla y crea lazos reales.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Características principales -->
+    <section class="py-20 px-4 bg-gray-800">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-red-400 via-pink-400 to-orange-400 bg-clip-text text-transparent">
+          Características principales
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-gray-900/50 rounded-xl p-6 hover:bg-gray-900/70 transition-all duration-300">
+            <h3 class="text-2xl font-semibold mb-4 text-pink-400">Registro & Perfil</h3>
+            <ul class="space-y-2 text-gray-300">
+              <li>• Nombre, edad, carrera</li>
+              <li>• Descripción e intereses</li>
+              <li>• Instagram requerido</li>
+              <li>• Fotografías seguras</li>
+            </ul>
+          </div>
+          <div class="bg-gray-900/50 rounded-xl p-6 hover:bg-gray-900/70 transition-all duration-300">
+            <h3 class="text-2xl font-semibold mb-4 text-orange-400">Sistema de Match</h3>
+            <ul class="space-y-2 text-gray-300">
+              <li>• Swipe like/dislike</li>
+              <li>• Match mutuo</li>
+              <li>• Filtros por carrera e intereses</li>
+              <li>• Busca amistad o citas</li>
+            </ul>
+          </div>
+          <div class="bg-gray-900/50 rounded-xl p-6 hover:bg-gray-900/70 transition-all duration-300">
+            <h3 class="text-2xl font-semibold mb-4 text-red-400">Seguridad Premium</h3>
+            <ul class="space-y-2 text-gray-300">
+              <li>• Perfiles reales verificados</li>
+              <li>• Control de datos</li>
+              <li>• Likes ilimitados (Premium)</li>
+              <li>• Más visibilidad</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section class="py-20 px-4 bg-gray-900">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-white">
+          Beneficios de usar TINDERTEC
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl">🔒</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Comunidad segura</h3>
+            <p class="text-gray-400">Solo estudiantes del campus, sin intrusos.</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl">👥</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Personas reales</h3>
+            <p class="text-gray-400">Verificación estricta para conexiones auténticas.</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl">🏫</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Entorno universitario</h3>
+            <p class="text-gray-400">Conecta con quien comparte tu día a día.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Versión Premium -->
+    <section class="py-20 px-4 bg-gray-800">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-pink-400 to-orange-400 bg-clip-text text-transparent">
+          Versión Premium
+        </h2>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-gray-900/50">
+                <th class="p-4">Característica</th>
+                <th class="p-4 text-center">Gratis</th>
+                <th class="p-4 text-center bg-gradient-to-br from-red-500/20 to-pink-500/20">Premium</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-700">
+              <tr>
+                <td class="p-4">Likes ilimitados</td>
+                <td class="p-4 text-center">❌</td>
+                <td class="p-4 text-center">✅</td>
+              </tr>
+              <tr>
+                <td class="p-4">Ver quién te dio like</td>
+                <td class="p-4 text-center">❌</td>
+                <td class="p-4 text-center">✅</td>
+              </tr>
+              <tr>
+                <td class="p-4">Más visibilidad</td>
+                <td class="p-4 text-center">❌</td>
+                <td class="p-4 text-center">✅</td>
+              </tr>
+              <tr>
+                <td class="p-4">Filtros avanzados</td>
+                <td class="p-4 text-center">✅</td>
+                <td class="p-4 text-center">✅</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seguridad y privacidad -->
+    <section class="py-20 px-4 bg-gray-900">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-white">
+          Seguridad y Privacidad
+        </h2>
+        <div class="grid md:grid-cols-2 gap-12">
+          <div>
+            <h3 class="text-2xl font-semibold mb-4 text-red-400">Tu seguridad primero</h3>
+            <ul class="space-y-3 text-gray-300">
+              <li>• <strong>Perfiles reales:</strong> Verificación con correo institucional.</li>
+              <li>• <strong>Control total:</strong> Decide qué compartir y con quién.</li>
+              <li>• <strong>Datos protegidos:</strong> Cumplimos con normativas de privacidad.</li>
+              <li>• <strong>Reportes fáciles:</strong> Denuncia y bloquea usuarios.</li>
+            </ul>
+          </div>
+          <div class="bg-gray-800/50 rounded-xl p-6">
+            <h3 class="text-2xl font-semibold mb-4 text-pink-400">Política de Privacidad</h3>
+            <p class="text-gray-300 mb-4">En TINDERTEC, tu privacidad es sagrada. No compartimos datos con terceros sin consentimiento. Lee nuestra <a href="/privacy-policy" class="text-orange-400 hover:underline">política completa</a>.</p>
+            <p class="text-sm text-gray-500">Actualizado: {currentYear}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 py-8 px-4 border-t border-gray-800">
+      <div class="max-w-7xl mx-auto text-center">
+        <p class="text-gray-400">
+          TINDERTEC © {currentYear} – Aplicación creada para estudiantes del TecNM Campus Saltillo, hecha por <a href="https://neurovix.com" class="text-pink-400 hover:underline">Neurovix</a> (Desarrollo de Software a la medida)
+        </p>
+      </div>
+    </footer>
+  </main>
+</Layout>
+
+<style>
+  /* Smooth scrolling and animations */
+  html {
+    scroll-behavior: smooth;
+  }
+</style>

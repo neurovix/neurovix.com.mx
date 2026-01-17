@@ -1,0 +1,384 @@
+---
+import Navbar from "../../../../components/Navbar.astro";
+import Layout from "../../../../layouts/Layout.astro";
+---
+
+<Layout>
+  <div class="bg-gray-900 text-white min-h-screen">
+    <!-- Header -->
+    <Navbar />
+    <!-- Hero Support -->
+    <section class="py-16 bg-gradient-to-br from-gray-800 to-gray-900">
+      <div class="container mx-auto px-4 text-center pt-20">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">
+          ¿Cómo podemos <span class="text-rose-400">ayudarte</span>?
+        </h2>
+        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          Encuentra respuestas rápidas a tus preguntas o contáctanos directamente
+        </p>
+       
+        <!-- Search Bar -->
+        <div class="max-w-2xl mx-auto">
+          <div class="relative">
+            <input
+              type="text"
+              placeholder="Busca tu pregunta aquí..."
+              class="w-full bg-gray-800 border border-gray-700 rounded-full px-6 py-4 pl-14 text-white placeholder-gray-500 focus:outline-none focus:border-rose-500 transition-colors"
+            />
+            <svg class="w-6 h-6 text-gray-500 absolute left-5 top-1/2 transform -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Quick Links -->
+    <section class="py-12 bg-gray-800/30">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <a href="#cuenta" class="bg-gray-800 p-6 rounded-xl hover:bg-gray-750 transition-all border border-gray-700 hover:border-rose-500/50 text-center group">
+            <div class="text-4xl mb-3">👤</div>
+            <h3 class="font-bold text-white group-hover:text-rose-400 transition-colors">Mi cuenta</h3>
+          </a>
+          <a href="#match" class="bg-gray-800 p-6 rounded-xl hover:bg-gray-750 transition-all border border-gray-700 hover:border-pink-500/50 text-center group">
+            <div class="text-4xl mb-3">💕</div>
+            <h3 class="font-bold text-white group-hover:text-pink-400 transition-colors">Matches y Chat</h3>
+          </a>
+          <a href="#premium" class="bg-gray-800 p-6 rounded-xl hover:bg-gray-750 transition-all border border-gray-700 hover:border-yellow-500/50 text-center group">
+            <div class="text-4xl mb-3">⭐</div>
+            <h3 class="font-bold text-white group-hover:text-yellow-400 transition-colors">Premium</h3>
+          </a>
+          <a href="#seguridad" class="bg-gray-800 p-6 rounded-xl hover:bg-gray-750 transition-all border border-gray-700 hover:border-green-500/50 text-center group">
+            <div class="text-4xl mb-3">🔒</div>
+            <h3 class="font-bold text-white group-hover:text-green-400 transition-colors">Seguridad</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- FAQ Section -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+          Preguntas <span class="text-orange-400">Frecuentes</span>
+        </h2>
+        <div class="max-w-4xl mx-auto space-y-6">
+          <!-- Cuenta -->
+          <div id="cuenta" class="scroll-mt-20">
+            <h3 class="text-2xl font-bold mb-6 text-rose-400 flex items-center gap-2">
+              <span>👤</span> Mi cuenta
+            </h3>
+           
+            <div class="space-y-4">
+              <details class="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden group">
+                <summary class="px-6 py-4 cursor-pointer hover:bg-gray-750 transition-colors font-semibold flex items-center justify-between">
+                  ¿Cómo me registro en TINDERTEC?
+                  <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </summary>
+                <div class="px-6 py-4 bg-gray-750 text-gray-300 border-t border-gray-700">
+                  Para registrarte necesitas tu correo institucional del TecNM Campus Saltillo. Descarga la app, ingresa tu correo, verifica tu cuenta mediante el enlace que te enviamos y completa tu perfil con tus fotos, carrera e intereses.
+                </div>
+              </details>
+              <details class="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden group">
+                <summary class="px-6 py-4 cursor-pointer hover:bg-gray-750 transition-colors font-semibold flex items-center justify-between">
+                  ¿Puedo usar TINDERTEC si no soy estudiante del TecNM Saltillo?
+                  <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </summary>
+                <div class="px-6 py-4 bg-gray-750 text-gray-300 border-t border-gray-700">
+                  No, TINDERTEC es exclusivo para estudiantes activos del Tecnológico Nacional de México Campus Saltillo. Necesitas un correo institucional válido para poder registrarte y acceder a la plataforma.
+                </div>
+              </details>
+              <details class="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden group">
+                <summary class="px-6 py-4 cursor-pointer hover:bg-gray-750 transition-colors font-semibold flex items-center justify-between">
+                  ¿Cómo edito mi perfil?
+                  <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </summary>
+                <div class="px-6 py-4 bg-gray-750 text-gray-300 border-t border-gray-700">
+                  Ve a tu perfil tocando el ícono en la parte superior, selecciona "Editar perfil" y podrás modificar tus fotos, descripción, intereses, carrera y demás información. Los cambios se guardan automáticamente.
+                </div>
+              </details>
+              <details class="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden group">
+                <summary class="px-6 py-4 cursor-pointer hover:bg-gray-750 transition-colors font-semibold flex items-center justify-between">
+                  ¿Cómo elimino mi cuenta?
+                  <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </summary>
+                <div class="px-6 py-4 bg-gray-750 text-gray-300 border-t border-gray-700">
+                  Ve a Configuración, selecciona "Cuenta y privacidad", desplázate hasta el final y elige "Eliminar cuenta". Ten en cuenta que esta acción es permanente y eliminará todos tus datos, matches y conversaciones.
+                </div>
+              </details>
+            </div>
+          </div>
+          <!-- Matches y Chat -->
+          <div id="match" class="scroll-mt-20">
+            <h3 class="text-2xl font-bold mb-6 text-pink-400 flex items-center gap-2 mt-12">
+              <span>💕</span> Matches y Chat
+            </h3>
+           
+            <div class="space-y-4">
+              <details class="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden group">
+                <summary class="px-6 py-4 cursor-pointer hover:bg-gray-750 transition-colors font-semibold flex items-center justify-between">
+                  ¿Cómo funciona el sistema de match?
+                  <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </summary>
+                <div class="px-6 py-4 bg-gray-750 text-gray-300 border-t border-gray-700">
+                  Desliza a la derecha (like) en los perfiles que te gusten y a la izquierda (dislike) en los que no. Cuando dos personas se dan like mutuamente, se crea un match y pueden comenzar a chatear.
+                </div>
+              </details>
+              <details class="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden group">
+                <summary class="px-6 py-4 cursor-pointer hover:bg-gray-750 transition-colors font-semibold flex items-center justify-between">
+                  ¿Puedo deshacer un swipe?
+                  <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </summary>
+                <div class="px-6 py-4 bg-gray-750 text-gray-300 border-t border-gray-700">
+                  Esta función está disponible solo para usuarios Premium. Con Premium puedes retroceder y revisar perfiles que pasaste accidentalmente.
+                </div>
+              </details>
+              <details class="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden group">
+                <summary class="px-6 py-4 cursor-pointer hover:bg-gray-750 transition-colors font-semibold flex items-center justify-between">
+                  ¿Por qué desapareció un match?
+                  <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </summary>
+                <div class="px-6 py-4 bg-gray-750 text-gray-300 border-t border-gray-700">
+                  Un match puede desaparecer si la otra persona eliminó su cuenta, te desmatcheó o fue reportada y eliminada por violar nuestros términos de uso.
+                </div>
+              </details>
+              <details class="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden group">
+                <summary class="px-6 py-4 cursor-pointer hover:bg-gray-750 transition-colors font-semibold flex items-center justify-between">
+                  ¿Cómo uso los filtros de búsqueda?
+                  <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </summary>
+                <div class="px-6 py-4 bg-gray-750 text-gray-300 border-t border-gray-700">
+                  En la pantalla principal, toca el ícono de filtro. Puedes filtrar por carrera, intereses y lo que buscas (amistad, citas, networking). Los usuarios Premium tienen acceso a filtros avanzados adicionales.
+                </div>
+              </details>
+            </div>
+          </div>
+          <!-- Premium -->
+          <div id="premium" class="scroll-mt-20">
+            <h3 class="text-2xl font-bold mb-6 text-yellow-400 flex items-center gap-2 mt-12">
+              <span>⭐</span> TINDERTEC Premium
+            </h3>
+           
+            <div class="space-y-4">
+              <details class="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden group">
+                <summary class="px-6 py-4 cursor-pointer hover:bg-gray-750 transition-colors font-semibold flex items-center justify-between">
+                  ¿Qué incluye TINDERTEC Premium?
+                  <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </summary>
+                <div class="px-6 py-4 bg-gray-750 text-gray-300 border-t border-gray-700">
+                  Premium incluye: ver quién te dio like, likes ilimitados, mayor visibilidad de tu perfil, filtros avanzados, retroceder en swipes y sin anuncios. Es la mejor forma de maximizar tus matches.
+                </div>
+              </details>
+              <details class="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden group">
+                <summary class="px-6 py-4 cursor-pointer hover:bg-gray-750 transition-colors font-semibold flex items-center justify-between">
+                  ¿Cómo me suscribo a Premium?
+                  <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </summary>
+                <div class="px-6 py-4 bg-gray-750 text-gray-300 border-t border-gray-700">
+                  Ve a tu perfil, toca el ícono de estrella "Premium" y elige el plan que prefieras. Los pagos se procesan de forma segura a través de App Store o Google Play.
+                </div>
+              </details>
+              <details class="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden group">
+                <summary class="px-6 py-4 cursor-pointer hover:bg-gray-750 transition-colors font-semibold flex items-center justify-between">
+                  ¿Cómo cancelo mi suscripción Premium?
+                  <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </summary>
+                <div class="px-6 py-4 bg-gray-750 text-gray-300 border-t border-gray-700">
+                  Cancela directamente desde la configuración de suscripciones de tu App Store (iOS) o Google Play (Android). Seguirás disfrutando de Premium hasta que termine tu periodo de pago actual.
+                </div>
+              </details>
+              <details class="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden group">
+                <summary class="px-6 py-4 cursor-pointer hover:bg-gray-750 transition-colors font-semibold flex items-center justify-between">
+                  ¿Hay reembolsos disponibles?
+                  <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </summary>
+                <div class="px-6 py-4 bg-gray-750 text-gray-300 border-t border-gray-700">
+                  Los reembolsos están sujetos a las políticas de App Store y Google Play. Contacta directamente con la tienda donde realizaste la compra para solicitar un reembolso.
+                </div>
+              </details>
+            </div>
+          </div>
+          <!-- Seguridad -->
+          <div id="seguridad" class="scroll-mt-20">
+            <h3 class="text-2xl font-bold mb-6 text-green-400 flex items-center gap-2 mt-12">
+              <span>🔒</span> Seguridad y Privacidad
+            </h3>
+           
+            <div class="space-y-4">
+              <details class="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden group">
+                <summary class="px-6 py-4 cursor-pointer hover:bg-gray-750 transition-colors font-semibold flex items-center justify-between">
+                  ¿Cómo garantizan que los usuarios son estudiantes reales?
+                  <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </summary>
+                <div class="px-6 py-4 bg-gray-750 text-gray-300 border-t border-gray-700">
+                  Todos los usuarios deben verificar su correo institucional del TecNM Campus Saltillo. Solo los correos válidos y activos pueden crear una cuenta, garantizando que todos sean estudiantes reales del campus.
+                </div>
+              </details>
+              <details class="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden group">
+                <summary class="px-6 py-4 cursor-pointer hover:bg-gray-750 transition-colors font-semibold flex items-center justify-between">
+                  ¿Cómo reporto a un usuario inapropiado?
+                  <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </summary>
+                <div class="px-6 py-4 bg-gray-750 text-gray-300 border-t border-gray-700">
+                  En el perfil del usuario o en el chat, toca los tres puntos y selecciona "Reportar". Elige el motivo y envía. Revisamos todos los reportes en menos de 24 horas y tomamos acciones inmediatas.
+                </div>
+              </details>
+              <details class="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden group">
+                <summary class="px-6 py-4 cursor-pointer hover:bg-gray-750 transition-colors font-semibold flex items-center justify-between">
+                  ¿Mis datos están seguros?
+                  <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </summary>
+                <div class="px-6 py-4 bg-gray-750 text-gray-300 border-t border-gray-700">
+                  Sí. Utilizamos encriptación de extremo a extremo para proteger tus datos. Tu información personal nunca se comparte con terceros sin tu consentimiento explícito. Lee nuestra política de privacidad para más detalles.
+                </div>
+              </details>
+              <details class="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden group">
+                <summary class="px-6 py-4 cursor-pointer hover:bg-gray-750 transition-colors font-semibold flex items-center justify-between">
+                  ¿Puedo bloquear a alguien?
+                  <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </summary>
+                <div class="px-6 py-4 bg-gray-750 text-gray-300 border-t border-gray-700">
+                  Sí. Ve al perfil de la persona, toca los tres puntos y selecciona "Bloquear". Una vez bloqueada, esa persona no podrá verte ni contactarte, y desaparecerá de tus matches.
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section class="py-16 bg-gradient-to-br from-gray-800 to-gray-900">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            ¿Aún necesitas <span class="text-rose-400">ayuda</span>?
+          </h2>
+          <p class="text-xl text-gray-300 mb-8">
+            Nuestro equipo está aquí para ayudarte
+          </p>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-gray-800 p-8 rounded-xl border border-gray-700">
+              <div class="text-4xl mb-4">📧</div>
+              <h3 class="text-xl font-bold mb-3">Email</h3>
+              <p class="text-gray-400 mb-4">Respuesta en menos de 24 horas</p>
+              <a href="mailto:fervazquez@neurovix.com.mx" class="text-rose-400 hover:text-rose-300 font-semibold">
+                fervazquez@neurovix.com.mx
+              </a>
+            </div>
+            <div class="bg-gray-800 p-8 rounded-xl border border-gray-700">
+              <div class="text-4xl mb-4">💬</div>
+              <h3 class="text-xl font-bold mb-3">Chat en vivo</h3>
+              <p class="text-gray-400 mb-4">Disponible de 9:00 AM a 9:00 PM</p>
+              <button class="bg-gradient-to-r from-rose-500 to-orange-500 hover:from-rose-600 hover:to-orange-600 text-white px-6 py-2 rounded-full font-semibold transition-all">
+                Iniciar chat
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-950 py-12">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-8">
+          <a href="/" class="inline-block">
+            <h3 class="text-2xl font-bold bg-gradient-to-r from-rose-400 to-orange-400 bg-clip-text text-transparent mb-2">
+              TINDERTEC
+            </h3>
+          </a>
+          <p class="text-gray-400">Centro de Ayuda y Soporte</p>
+        </div>
+        <div class="grid md:grid-cols-4 gap-8 max-w-4xl mx-auto mb-8">
+          <div>
+            <h4 class="font-bold mb-3 text-white">Recursos</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="#cuenta" class="hover:text-rose-400 transition-colors">Mi cuenta</a></li>
+              <li><a href="#match" class="hover:text-rose-400 transition-colors">Matches</a></li>
+              <li><a href="#premium" class="hover:text-rose-400 transition-colors">Premium</a></li>
+              <li><a href="#seguridad" class="hover:text-rose-400 transition-colors">Seguridad</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-3 text-white">Legal</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="/terms" class="hover:text-rose-400 transition-colors">Términos de uso</a></li>
+              <li><a href="/privacy" class="hover:text-rose-400 transition-colors">Privacidad</a></li>
+              <li><a href="/cookies" class="hover:text-rose-400 transition-colors">Cookies</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-3 text-white">Comunidad</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="/guidelines" class="hover:text-rose-400 transition-colors">Pautas</a></li>
+              <li><a href="/safety" class="hover:text-rose-400 transition-colors">Seguridad</a></li>
+              <li><a href="/blog" class="hover:text-rose-400 transition-colors">Blog</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-3 text-white">Contacto</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="mailto:support@tindertec.com" class="hover:text-rose-400 transition-colors">Email</a></li>
+              <li><a href="#" class="hover:text-rose-400 transition-colors">Chat</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 pt-8 text-center">
+          <p class="text-gray-500 text-sm">
+            TINDERTEC © 2026 – Aplicación creada para estudiantes del TecNM Campus Saltillo
+          </p>
+          <p class="text-gray-600 text-sm mt-2">
+            Hecha por <span class="text-orange-400 font-semibold">Neurovix</span> (Desarrollo de Software a la medida)
+          </p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <style>
+    .bg-gray-750 {
+      background-color: #2d3748;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    details summary {
+      list-style: none;
+    }
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+    details[open] summary {
+      border-bottom: 1px solid #374151;
+    }
+  </style>
+</Layout>
