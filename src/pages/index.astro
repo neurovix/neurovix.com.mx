@@ -12,16 +12,18 @@ const currentYear = new Date().getFullYear();
       class="bg-black text-white flex flex-row w-full items-center px-44 py-6 border-b-2 border-b-white"
     >
       <div class="w-2/12 flex justify-start">
-        <Image
-          src="/black_logo.png"
-          alt="NEUROVIX BLACK LOGO"
-          width={200}
-          height={10}
-        />
+        <a href="/">
+          <Image
+            src="/black_logo.png"
+            alt="NEUROVIX BLACK LOGO"
+            width={200}
+            height={10}
+          />
+        </a>
       </div>
       <div class="w-5/12 flex justify-end">
         <ul class="flex flex-row items-center">
-          <li><a href="#" class="hover:underline">Quienes somos</a></li>
+          <li><a href="/sobre_nosotros" class="hover:underline">Quienes somos</a></li>
           <li>
             <a href="#" class="flex flex-row items-center mx-10 hover:underline"
               >Servicios{" "}<Image
@@ -39,7 +41,7 @@ const currentYear = new Date().getFullYear();
         <ul class="flex flex-row items-center">
           <li>
             <a href="#" class="hover:underline flex flex-row items-center mr-5"
-              >Idioma <Image
+              >Language <Image
                 src="/white_dropdown.png"
                 alt="WHITE DROPDOWN"
                 width={20}
@@ -360,7 +362,7 @@ const currentYear = new Date().getFullYear();
       />
       <div class="w-full flex flex-row items-center mt-10">
         <div class="w-2/3">
-          <a class="mr-3 hover:underline" href="">Acerca</a>
+          <a class="mr-3 hover:underline" href="/sobre_nosotros">Acerca</a>
           <a href="" class="hover:underline">Servicios</a>
           <a class="mx-3 hover:underline" href="">Blog</a>
           <a href="" class="hover:underline">Bolsa de Trabajo</a>
@@ -398,6 +400,7 @@ const currentYear = new Date().getFullYear();
               src="/icons/tiktok.png"
               alt="TIKTOK ICON"
               width={30}
+              class="mr-3"
               height={10}
             /></a
           >
