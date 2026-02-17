@@ -1,62 +1,14 @@
 ---
 import Image from "astro/components/Image.astro";
 import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
 ---
 
 <Layout>
   <main>
     <!-- NAVBAR SECTION -->
-    <nav
-      class="bg-black text-white flex flex-row w-full items-center px-44 py-6 border-b-2 border-b-white"
-    >
-      <div class="w-2/12 flex justify-start">
-        <a href="/">
-          <Image
-            src="/black_logo.png"
-            alt="NEUROVIX BLACK LOGO"
-            width={200}
-            height={10}
-          />
-        </a>
-      </div>
-      <div class="w-5/12 flex justify-end">
-        <ul class="flex flex-row items-center">
-          <li><a href="/sobre_nosotros" class="hover:underline">Quienes somos</a></li>
-          <li>
-            <a href="#" class="flex flex-row items-center mx-10 hover:underline"
-              >Servicios{" "}<Image
-                src="/white_dropdown.png"
-                alt="WHITE DROPDOWN"
-                width={20}
-                height={10}
-              /></a
-            >
-          </li>
-          <li><a href="#" class="hover:underline">Recursos</a></li>
-        </ul>
-      </div>
-      <div class="w-5/12 flex justify-end">
-        <ul class="flex flex-row items-center">
-          <li>
-            <a href="#" class="hover:underline flex flex-row items-center mr-5"
-              >Language <Image
-                src="/white_dropdown.png"
-                alt="WHITE DROPDOWN"
-                width={20}
-                height={10}
-              /></a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="bg-white text-black rounded px-5 py-3 hover:bg-gray-300"
-              >SOLICITAR UNA DEMOSTRACION</a
-            >
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <Navbar />
     <!-- HERO SECTION -->
     <section
       class="bg-black text-white w-full flex flex-row items-center px-44 py-32"
@@ -69,7 +21,7 @@ import Layout from "../layouts/Layout.astro";
           Somos un equipo de expertos en inteligencia artificial y desarrollo de software.
         </p>
         <a
-          href=""
+          href="/contacto"
           class="bg-white text-black rounded px-5 py-3 font-bold text-lg hover:bg-gray-300"
           >SOLICITAR UNA DEMOSTRACION</a
         >
@@ -122,5 +74,6 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </div>
     </section>
+    <Footer />
   </main>
 </Layout>

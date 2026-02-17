@@ -1,213 +1,116 @@
 ---
+import Image from "astro/components/Image.astro";
+import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
-import Footer from "../components/Footer.astro";
-import Image from "astro/components/Image.astro";
-import Hero from "../assets/servicios_hero.png";
-import Web from "../assets/web_gray.png";
-import Mobile from "../assets/iphone_gray.png";
-import Mantemiento from "../assets/mantenimiento_gray.png";
-import Automatizacion from "../assets/nodos_gray.png";
-import InteligenciaArtificial from "../assets/ia_gray.png";
-import Cloud from "../assets/nube_gray.png";
-import CocaCola from "../assets/ads/coca_cola_2.jpeg";
-import GM from "../assets/ads/gm_1.jpeg";
 ---
 
 <Layout>
   <main>
+    <!-- NAVBAR SECTION -->
     <Navbar />
-
-    <section class="relative w-full h-screen">
-      <Image
-        class="w-full h-full object-cover"
-        src={Hero}
-        alt="Hero Servicios"
-      />
-      <div class="absolute inset-0 bg-black/50 z-10"></div>
-      <div
-        class="mt-28 absolute inset-0 flex flex-col items-center justify-center text-white text-center z-20 px-4"
-      >
-        <span class="text-sm uppercase tracking-widest text-blue-300 mb-2"
-          >Nuestros Servicios</span
-        >
-        <h1 class="text-4xl md:text-6xl font-bold drop-shadow-lg">
-          Soluciones tecnológicas hechas a medida
-        </h1>
-        <p
-          class="text-lg md:text-xl font-roboto-regular mt-4 drop-shadow-md max-w-3xl"
-        >
-          Te ayudamos a crecer con software personalizado, automatizaciones
-          inteligentes y tecnología de última generación.
-        </p>
-      </div>
-    </section>
-
+    <!-- HERO SECTION -->
     <section
-      class="px-6 md:px-20 py-20 bg-gradient-to-b from-blue-50 to-white font-roboto-regular"
+      class="bg-black text-white w-full flex flex-row items-center px-44 py-32"
     >
-      <div class="max-w-6xl mx-auto text-center">
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-12">
-          Nuestros Servicios Tecnologicos
+      <div class="w-5/6">
+        <h1 class="text-5xl font-extrabold">
+          Soluciones tecnologicas hechas a la medida
         </h1>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          <div
-            class="bg-white shadow-xl rounded-2xl p-6 hover:shadow-xl transition"
-          >
-            <Image
-              src={Web}
-              alt="Desarrollo web"
-              class="w-16 h-16 mx-auto mb-4"
-            />
-            <h2 class="text-xl font-semibold mb-2 text-gray-800">
-              Desarrollo Web
-            </h2>
-            <p class="text-sm text-gray-600">
-              Aplicaciones web rápidas, seguras y escalables hechas a la medida
-              de tu empresa.
-            </p>
-          </div>
-
-          <div
-            class="bg-white shadow-xl rounded-2xl p-6 hover:shadow-xl transition"
-          >
-            <Image
-              src={Mobile}
-              alt="Desarrollo móvil"
-              class="w-16 h-16 mx-auto mb-4"
-            />
-            <h2 class="text-xl font-semibold mb-2 text-gray-800">
-              Apps Móviles
-            </h2>
-            <p class="text-sm text-gray-600">
-              Aplicaciones Android y iOS con experiencia de usuario fluida y
-              profesional.
-            </p>
-          </div>
-
-          <div
-            class="bg-white shadow-xl rounded-2xl p-6 hover:shadow-xl transition"
-          >
-            <Image
-              src={Mantemiento}
-              alt="Soporte técnico"
-              class="w-16 h-16 mx-auto mb-4"
-            />
-            <h2 class="text-xl font-semibold mb-2 text-gray-800">
-              Soporte & Mantenimiento
-            </h2>
-            <p class="text-sm text-gray-600">
-              Mantenemos tus sistemas en óptimas condiciones con soporte técnico
-              confiable.
-            </p>
-          </div>
-
-          <div
-            class="bg-white shadow-xl rounded-2xl p-6 hover:shadow-xl transition"
-          >
-            <Image
-              src={Automatizacion}
-              alt="Automatización"
-              class="w-16 h-16 mx-auto mb-4"
-            />
-            <h2 class="text-xl font-semibold mb-2 text-gray-800">
-              Automatización de Procesos
-            </h2>
-            <p class="text-sm text-gray-600">
-              Eliminamos tareas repetitivas con automatizaciones eficientes y
-              personalizadas.
-            </p>
-          </div>
-
-          <div
-            class="bg-white shadow-xl rounded-2xl p-6 hover:shadow-xl transition"
-          >
-            <Image
-              src={InteligenciaArtificial}
-              alt="IA"
-              class="w-16 h-16 mx-auto mb-4"
-            />
-            <h2 class="text-xl font-semibold mb-2 text-gray-800">
-              Inteligencia Artificial
-            </h2>
-            <p class="text-sm text-gray-600">
-              Potencia tus operaciones con modelos de IA que aprenden y
-              optimizan tu flujo de trabajo.
-            </p>
-          </div>
-
-          <div
-            class="bg-white shadow-xl rounded-2xl p-6 hover:shadow-xl transition"
-          >
-            <Image src={Cloud} alt="Cloud" class="w-16 h-16 mx-auto mb-4" />
-            <h2 class="text-xl font-semibold mb-2 text-gray-800">
-              Instalación Local o en la Nube
-            </h2>
-            <p class="text-sm text-gray-600">
-              Despliegue de soluciones en servidores locales o nube según tus
-              necesidades.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="px-6 md:px-20 py-20 font-roboto-regular">
-      <div class="max-w-6xl mx-auto text-center">
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-12">
-          Nuestros Servicios Publicitarios
-        </h1>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-          <div
-            class="bg-white shadow-xl rounded-2xl p-6 hover:shadow-xl transition"
-          >
-            <Image
-              src={CocaCola}
-              alt="Coca Cola Flyer"
-              class="w-72 h-72 mx-auto mb-4"
-            />
-            <h2 class="text-2xl font-semibold text-gray-800">
-              Creacion de anuncios
-            </h2>
-          </div>
-
-          <div
-            class="bg-white shadow-xl rounded-2xl p-6 hover:shadow-xl transition"
-          >
-            <Image
-              src={GM}
-              alt="GM ad"
-              class="w-72 h-72 mx-auto mb-4"
-            />
-            <h2 class="text-2xl font-semibold text-gray-800">
-              Creacion de flyers
-            </h2>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section
-      class="py-16 px-6 md:px-20 bg-blue-900 text-white text-center font-roboto-regular"
-    >
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">
-          ¿Listo para transformar tu negocio?
-        </h2>
-        <p class="text-lg md:text-xl font-roboto-regular mb-6">
-          Cuéntanos qué necesitas y te ayudamos a crear una solución hecha a
-          medida. Desde automatizaciones hasta plataformas completas, estamos
-          listos para ayudarte.
+        <p class="mt-7 mb-5 font-semibold text-xl">
+          Te ayudamos a crecer con software personalizado, automatizaciones inteligentes y tecnología de última generación.
         </p>
         <a
           href="/contacto"
-          class="inline-block bg-blue-600 hover:bg-blue-700 transition text-white font-semibold px-6 py-3 rounded-lg"
+          class="bg-white text-black rounded px-5 py-3 font-bold text-lg hover:bg-gray-300"
+          >SOLICITAR UNA DEMOSTRACION</a
         >
-          Solicitar Cotización
-        </a>
+      </div>
+      <div class="w-7/12">
+        <Image
+          src="/hero_photo.jpeg"
+          alt="HERO PHOTO"
+          class="rounded"
+          width={900}
+          height={400}
+        />
       </div>
     </section>
-
+    <!-- CONTENT SECTION -->
+     <section class="px-40 pt-15 pb-20">
+      <h1 class="text-4xl font-extrabold text-center">Nuestros servicios</h1>
+      <div class="w-full flex flex-row items-center mt-5 pb-24">
+        <div class="w-1/3 h-72">
+          <Image
+            src="/web_development.jpg"
+            alt="WEB DEVELOPMENT IMAGE"
+            width={350}
+            height={10}
+            class="rounded-t-2xl"
+          />
+          <h1 class="font-bold text-center mt-2 mb-3 text-2xl">Desarrollo Web</h1>
+          <p class="text-center">Aplicaciones web rapidas, seguras y escalables hechas a la medida para tu empresa.</p>
+        </div>
+        <div class="w-1/3 h-72">
+          <Image
+            src="/mobile_development.jpg"
+            alt="MOBILE DEVELOPMENT IMAGE"
+            width={350}
+            height={10}
+            class="rounded-t-2xl"
+          />
+          <h1 class="font-bold text-center mt-2 mb-3 text-2xl">Apps Moviles</h1>
+          <p class="text-center">Aplicaciones Android y IOS con experiencia de usuario intuitiva y moderna.</p>
+        </div>
+        <div class="w-1/3 h-72">
+          <Image
+            src="/hardware.jpg"
+            alt="HARDWARE IMAGE"
+            width={350}
+            height={10}
+            class="rounded-t-2xl"
+          />
+          <h1 class="font-bold text-center mt-2 mb-3 text-2xl">Soporte & Mantenimiento</h1>
+          <p class="text-center">Ofrecemos soporte técnico continuo y mantenimiento preventivo para garantizar el correcto funcionamiento de tus sistemas.</p>
+        </div>
+      </div>
+      <div class="w-full flex flex-row items-center">
+        <div class="w-1/3 h-72">
+          <Image
+            src="/process_automation.jpg"
+            alt="PROCESS AUTOMATION IMAGE"
+            width={350}
+            height={10}
+            class="rounded-t-2xl"
+          />
+          <h1 class="font-bold text-center mt-2 mb-3 text-2xl">Automatizacion de procesos</h1>
+          <p class="text-center">Eliminamos tareas repetitivas con automatizaciones eficientes y personalizadas.</p>
+        </div>
+        <div class="w-1/3 h-72">
+          <Image
+            src="/artificial_intelligence.jpg"
+            alt="ARTIFICIAL INTELLIGENCE IMAGE"
+            width={350}
+            height={10}
+            class="rounded-t-2xl"
+          />
+          <h1 class="font-bold text-center mt-2 mb-3 text-2xl">Inteligencia Artificial</h1>
+          <p class="text-center">Potencia tus operaciones con modelos de IA que aprenden y optimizan tus flujos de trabajo.</p>
+        </div>
+        <div class="w-1/3 h-72">
+          <Image
+            src="/cloud_computing.jpg"
+            alt="CLOUD COMPUTING IMAGE"
+            width={350}
+            height={10}
+            class="rounded-t-2xl"
+          />
+          <h1 class="font-bold text-center mt-2 mb-3 text-2xl">Despliegue en la Nube</h1>
+          <p class="text-center">Implementamos soluciones escalables y seguras en entornos en la nube para maximizar el rendimiento de tus aplicaciones.</p>
+        </div>
+      </div>
+     </section>
+    <!-- FOOTER SECTION -->
     <Footer />
   </main>
 </Layout>

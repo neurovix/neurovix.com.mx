@@ -1,64 +1,14 @@
 ---
 import Image from "astro/components/Image.astro";
 import Layout from "../layouts/Layout.astro";
-
-const currentYear = new Date().getFullYear();
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
 ---
 
 <Layout>
   <main>
     <!-- NAVBAR SECTION -->
-    <nav
-      class="bg-black text-white flex flex-row w-full items-center px-44 py-6 border-b-2 border-b-white"
-    >
-      <div class="w-2/12 flex justify-start">
-        <a href="/">
-          <Image
-            src="/black_logo.png"
-            alt="NEUROVIX BLACK LOGO"
-            width={200}
-            height={10}
-          />
-        </a>
-      </div>
-      <div class="w-5/12 flex justify-end">
-        <ul class="flex flex-row items-center">
-          <li><a href="/sobre_nosotros" class="hover:underline">Quienes somos</a></li>
-          <li>
-            <a href="#" class="flex flex-row items-center mx-10 hover:underline"
-              >Servicios{" "}<Image
-                src="/white_dropdown.png"
-                alt="WHITE DROPDOWN"
-                width={20}
-                height={10}
-              /></a
-            >
-          </li>
-          <li><a href="#" class="hover:underline">Recursos</a></li>
-        </ul>
-      </div>
-      <div class="w-5/12 flex justify-end">
-        <ul class="flex flex-row items-center">
-          <li>
-            <a href="#" class="hover:underline flex flex-row items-center mr-5"
-              >Language <Image
-                src="/white_dropdown.png"
-                alt="WHITE DROPDOWN"
-                width={20}
-                height={10}
-              /></a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="bg-white text-black rounded px-5 py-3 hover:bg-gray-300"
-              >SOLICITAR UNA DEMOSTRACION</a
-            >
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <Navbar />
     <!-- HERO SECTION -->
     <section
       class="bg-black text-white w-full flex flex-row items-center px-44 py-32"
@@ -72,7 +22,7 @@ const currentYear = new Date().getFullYear();
           soluciones personalizadas
         </p>
         <a
-          href=""
+          href="/contacto"
           class="bg-white text-black rounded px-5 py-3 font-bold text-lg hover:bg-gray-300"
           >SOLICITAR UNA DEMOSTRACION</a
         >
@@ -353,80 +303,6 @@ const currentYear = new Date().getFullYear();
         </section>
       </div>
     </section>
-    <footer class="bg-white px-20 py-10 border-t-2 border-black">
-      <Image
-        src="/white_logo.png"
-        alt="NEUROVIX LOGO"
-        width={200}
-        height={10}
-      />
-      <div class="w-full flex flex-row items-center mt-10">
-        <div class="w-2/3">
-          <a class="mr-3 hover:underline" href="/sobre_nosotros">Acerca</a>
-          <a href="" class="hover:underline">Servicios</a>
-          <a class="mx-3 hover:underline" href="">Blog</a>
-          <a href="" class="hover:underline">Bolsa de Trabajo</a>
-          <a class="ml-3 hover:underline" href="">Contactanos</a>
-        </div>
-        <div class="w-1/3 flex flex-row items-center justify-end">
-          <a href=""
-            ><Image
-              class="mx-3"
-              src="/icons/facebook.png"
-              alt="FACEBOOK ICON"
-              width={30}
-              height={10}
-            /></a
-          >
-          <a href=""
-            ><Image
-              src="/icons/instagram.png"
-              alt="INSTAGRAM ICON"
-              width={30}
-              height={10}
-            /></a
-          >
-          <a href=""
-            ><Image
-              class="mx-3"
-              src="/icons/linkedin.png"
-              alt="LINKEDIN ICON"
-              width={30}
-              height={10}
-            /></a
-          >
-          <a href=""
-            ><Image
-              src="/icons/tiktok.png"
-              alt="TIKTOK ICON"
-              width={30}
-              class="mr-3"
-              height={10}
-            /></a
-          >
-          <a href=""
-            ><Image
-              src="/icons/youtube.png"
-              alt="YOUTUBE ICON"
-              width={30}
-              height={10}
-            /></a
-          >
-          <a href=""
-            ><Image
-              class="mx-3"
-              src="/icons/x.png"
-              alt="X ICON"
-              width={30}
-              height={10}
-            /></a
-          >
-        </div>
-      </div>
-      <h1 class="text-center mt-10">
-        © {currentYear}
-        <span class="font-bold">Neurovix</span>. Todos los derechos reservados.
-      </h1>
-    </footer>
+    <Footer />
   </main>
 </Layout>
