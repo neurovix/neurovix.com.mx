@@ -3,49 +3,96 @@ import Image from "astro/components/Image.astro";
 ---
 
 <nav
-  class="bg-black text-white flex flex-row w-full items-center px-44 py-6 border-b-2 border-b-white"
+  class="bg-black text-white flex flex-row w-full items-center px-6 md:px-20 lg:px-44 py-4 md:py-6 border-b-2 border-b-white relative"
 >
-  <div class="w-2/12 flex justify-start">
+  <!-- Logo -->
+  <div class="flex-1 flex justify-start">
     <a href="/">
       <Image
         src="/black_logo.png"
         alt="NEUROVIX BLACK LOGO"
-        width={200}
+        width={160}
         height={10}
+        class="w-32 md:w-40 lg:w-[200px]"
       />
     </a>
   </div>
-  <div class="w-5/12 flex justify-end">
-    <ul class="flex flex-row items-center">
-      <li>
-        <a href="/sobre_nosotros" class="hover:underline">Quienes somos</a>
-      </li>
-      <li>
-        <a href="/servicios" class="ml-5"
-          >Servicios</a
-        >
-      </li>
-    </ul>
+
+  <!-- Desktop menu -->
+  <div class="hidden md:flex w-auto items-center gap-6 lg:gap-8">
+    <a href="/sobre_nosotros" class="hover:underline whitespace-nowrap">Quienes somos</a>
+    <a href="/servicios" class="hover:underline whitespace-nowrap">Servicios</a>
   </div>
-  <div class="w-5/12 flex justify-end">
-    <ul class="flex flex-row items-center">
-      <li>
-        <a href="#" class="hover:underline flex flex-row items-center mr-5"
-          >Language <Image
-            src="/white_dropdown.png"
-            alt="WHITE DROPDOWN"
-            width={20}
-            height={10}
-          /></a
-        >
-      </li>
-      <li>
-        <a
-          href="/contacto"
-          class="bg-white text-black rounded px-5 py-3 hover:bg-gray-300"
-          >SOLICITAR UNA DEMOSTRACION</a
-        >
-      </li>
-    </ul>
+
+  <!-- Desktop right actions -->
+  <div class="hidden md:flex items-center gap-4 lg:gap-6 ml-6 lg:ml-10">
+    <a href="#" class="hover:underline flex flex-row items-center gap-1 whitespace-nowrap">
+      Language
+      <Image src="/white_dropdown.png" alt="WHITE DROPDOWN" width={16} height={10} />
+    </a>
+    <a
+      href="/contacto"
+      class="bg-white text-black rounded px-3 py-2 lg:px-5 lg:py-3 hover:bg-gray-300 font-semibold text-sm lg:text-base whitespace-nowrap"
+    >
+      SOLICITAR UNA DEMOSTRACION
+    </a>
   </div>
+
+  <!-- Mobile hamburger button -->
+  <button
+    id="menu-toggle"
+    class="md:hidden flex flex-col justify-center items-center gap-[5px] p-2 focus:outline-none"
+    aria-label="Abrir menú"
+    aria-expanded="false"
+  >
+    <span class="hamburger-line block w-6 h-0.5 bg-white transition-all duration-300"></span>
+    <span class="hamburger-line block w-6 h-0.5 bg-white transition-all duration-300"></span>
+    <span class="hamburger-line block w-6 h-0.5 bg-white transition-all duration-300"></span>
+  </button>
 </nav>
+
+<!-- Mobile dropdown menu -->
+<div
+  id="mobile-menu"
+  class="md:hidden bg-black text-white flex flex-col items-start gap-0 max-h-0 overflow-hidden transition-all duration-300 ease-in-out border-b-2 border-b-white"
+>
+  <div class="flex flex-col w-full px-6 py-4 gap-4">
+    <a href="/sobre_nosotros" class="hover:underline text-base py-1">Quienes somos</a>
+    <a href="/servicios" class="hover:underline text-base py-1">Servicios</a>
+    <hr class="border-white/20" />
+    <a href="#" class="hover:underline flex items-center gap-1 text-base py-1">
+      Language
+      <Image src="/white_dropdown.png" alt="WHITE DROPDOWN" width={16} height={10} />
+    </a>
+    <a
+      href="/contacto"
+      class="bg-white text-black rounded px-4 py-2 hover:bg-gray-300 font-semibold text-sm text-center mt-1"
+    >
+      SOLICITAR UNA DEMOSTRACION
+    </a>
+  </div>
+</div>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const lines = document.querySelectorAll(".hamburger-line");
+
+  toggle?.addEventListener("click", () => {
+    const isOpen = menu?.style.maxHeight && menu.style.maxHeight !== "0px";
+
+    if (isOpen) {
+      menu!.style.maxHeight = "0px";
+      toggle.setAttribute("aria-expanded", "false");
+      lines[0]?.classList.remove("rotate-45", "translate-y-[7px]");
+      lines[1]?.classList.remove("opacity-0");
+      lines[2]?.classList.remove("-rotate-45", "-translate-y-[7px]");
+    } else {
+      menu!.style.maxHeight = menu!.scrollHeight + "px";
+      toggle.setAttribute("aria-expanded", "true");
+      lines[0]?.classList.add("rotate-45", "translate-y-[7px]");
+      lines[1]?.classList.add("opacity-0");
+      lines[2]?.classList.add("-rotate-45", "-translate-y-[7px]");
+    }
+  });
+</script>

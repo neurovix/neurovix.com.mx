@@ -9,93 +9,99 @@ import Navbar from "../components/Navbar.astro";
   <main>
     <!-- NAVBAR SECTION -->
     <Navbar />
+
     <!-- HERO SECTION -->
     <section
-      class="bg-black text-white w-full flex flex-row items-center px-44 py-32"
+      class="bg-black text-white w-full flex flex-col md:flex-row items-center px-6 md:px-20 lg:px-44 py-16 md:py-24 lg:py-32 gap-10 md:gap-8"
     >
-      <div class="w-5/6">
-        <h1 class="text-5xl font-extrabold">
+      <div class="w-full md:w-5/6 text-center md:text-left">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight">
           Desarrollo de Software a la medida y Automatizacion de procesos
         </h1>
-        <p class="mt-7 mb-5 font-semibold text-xl">
+        <p class="mt-5 mb-6 font-semibold text-lg md:text-xl">
           Reduce costos y aumenta la eficiencia de tus operaciones con
           soluciones personalizadas
         </p>
         <a
           href="/contacto"
-          class="bg-white text-black rounded px-5 py-3 font-bold text-lg hover:bg-gray-300"
-          >SOLICITAR UNA DEMOSTRACION</a
+          class="inline-block bg-white text-black rounded px-5 py-3 font-bold text-base md:text-lg hover:bg-gray-300"
         >
+          SOLICITAR UNA DEMOSTRACION
+        </a>
       </div>
-      <div class="w-7/12">
+      <div class="w-full md:w-7/12">
         <Image
           src="/hero_photo.jpeg"
           alt="HERO PHOTO"
-          class="rounded"
+          class="rounded w-full h-auto"
           width={900}
           height={400}
         />
       </div>
     </section>
+
     <!-- CONTENT SECTION -->
-    <section class="py-20">
+    <section class="py-14 md:py-20">
+
       <!-- COMPANIES CARROUSEL -->
       <div>
-        <h2 class="text-3xl font-bold text-center mb-10">
+        <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 px-4">
           Empresas que confian en nosotros
         </h2>
-        <div class="flex flex-row items-center justify-center gap-20">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-10 sm:gap-14 md:gap-20 px-6">
           <Image
             src="/companies/ag_maquinado.webp"
             alt="COMPANY 1"
-            class="text-gray-300 grayscale-100 hover:grayscale-0 hover:text-gray-50"
-            width={200}
+            class="grayscale hover:grayscale-0"
+            width={160}
             height={50}
           />
           <Image
             src="/companies/alra_plastic.png"
             alt="COMPANY 2"
-            class="text-gray-300 grayscale-100 hover:grayscale-0 hover:text-gray-50"
-            width={100}
+            class="grayscale hover:grayscale-0"
+            width={90}
             height={50}
           />
           <Image
             src="/companies/mbs_construcciones.webp"
             alt="COMPANY 3"
-            class="text-gray-300 grayscale-100 hover:grayscale-0 hover:text-gray-50"
-            width={200}
+            class="grayscale hover:grayscale-0"
+            width={160}
             height={50}
           />
         </div>
       </div>
-      <!-- CONTENT SECTION -->
-      <div class="px-32 text-center mt-15">
-        <h1 class="font-bold text-4xl px-20">
-          Creamos <span class="text-blue-800"
-            >plataformas y sistemas a medida</span
+
+      <!-- STATS SECTION -->
+      <div class="px-6 md:px-16 lg:px-32 text-center mt-14">
+        <h1 class="font-bold text-3xl md:text-4xl px-0 md:px-10 lg:px-20">
+          Creamos <span class="text-blue-800">plataformas y sistemas a medida</span
           > que se adaptan 100% a las necesidades de tu empresa
         </h1>
-        <p class="mt-5 font-extrabold text-xl">
+        <p class="mt-4 mb-8 font-extrabold text-lg md:text-xl">
           Desde aplicaciones mobiles, aplicaciones web o IIoT
         </p>
-        <div class="flex flex-row items-center mt-10">
-          <div class="w-1/3">
-            <h1 class="text-5xl font-extrabold">3</h1>
-            <p>Clientes que confian en nosotros actualmente</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-4 mt-8">
+          <div class="w-full sm:w-1/3 px-4">
+            <h1 class="text-4xl md:text-5xl font-extrabold">3</h1>
+            <p class="mt-1">Clientes que confian en nosotros actualmente</p>
           </div>
-          <div class="w-1/3">
-            <h1 class="text-5xl font-extrabold">+$300K MXN</h1>
-            <p>Valor de proyectos realizados</p>
+          <div class="w-full sm:w-1/3 px-4">
+            <h1 class="text-4xl md:text-5xl font-extrabold">+$300K MXN</h1>
+            <p class="mt-1">Valor de proyectos realizados</p>
           </div>
-          <div class="w-1/3">
-            <h1 class="text-5xl font-extrabold">40 - 70 %</h1>
-            <p>Reduccion de tiempos y mejora de eficiencia</p>
+          <div class="w-full sm:w-1/3 px-4">
+            <h1 class="text-4xl md:text-5xl font-extrabold">40 - 70 %</h1>
+            <p class="mt-1">Reduccion de tiempos y mejora de eficiencia</p>
           </div>
         </div>
       </div>
-      <div class="mt-20 w-full flex flex-row items-center px-20">
-        <div class="w-1/2 pr-5">
-          <h1 class="font-extrabold text-3xl">
+
+      <!-- FEATURE 1: Desarrollo de Software -->
+      <div class="mt-16 w-full flex flex-col md:flex-row items-center px-6 md:px-14 lg:px-20 gap-8">
+        <div class="w-full md:w-1/2 text-center md:text-left">
+          <h1 class="font-extrabold text-2xl md:text-3xl">
             Desarrollo de Software a la medida
           </h1>
           <p class="mt-3 mb-5">
@@ -103,32 +109,32 @@ import Navbar from "../components/Navbar.astro";
             necesidades específicas de tu empresa, garantizando eficiencia,
             escalabilidad y una experiencia de usuario superior.
           </p>
-          <a href="" class="bg-black text-white rounded-xl px-5 py-2"
-            >Conoce mas</a
-          >
+          <a href="" class="inline-block bg-black text-white rounded-xl px-5 py-2">Conoce mas</a>
         </div>
-        <div class="w-1/2">
+        <div class="w-full md:w-1/2">
           <Image
-            class="rounded-lg w-full"
+            class="rounded-lg w-full h-auto"
             src="/development_software.jpg"
             alt="DEVELOPMENT SOFTWARE"
-            width={400}
-            height={300}
+            width={600}
+            height={400}
           />
         </div>
       </div>
-      <div class="mt-20 w-full flex flex-row items-center px-20">
-        <div class="w-1/2">
+
+      <!-- FEATURE 2: Automatizacion IoT -->
+      <div class="mt-16 w-full flex flex-col-reverse md:flex-row items-center px-6 md:px-14 lg:px-20 gap-8">
+        <div class="w-full md:w-1/2">
           <Image
-            class="rounded-lg w-full"
+            class="rounded-lg w-full h-auto"
             src="/automation.jpg"
             alt="AUTOMATION"
-            width={400}
-            height={300}
+            width={600}
+            height={400}
           />
         </div>
-        <div class="w-1/2 pl-5">
-          <h1 class="font-extrabold text-3xl">
+        <div class="w-full md:w-1/2 text-center md:text-left">
+          <h1 class="font-extrabold text-2xl md:text-3xl">
             Automatizacion de procesos IoT & IIoT
           </h1>
           <p class="mt-3 mb-5">
@@ -136,14 +142,14 @@ import Navbar from "../components/Navbar.astro";
             tecnologías IoT e IIoT para optimizar procesos, mejorar la
             eficiencia operativa y reducir costos.
           </p>
-          <a href="" class="bg-black text-white rounded-xl px-5 py-2"
-            >Conoce mas</a
-          >
+          <a href="" class="inline-block bg-black text-white rounded-xl px-5 py-2">Conoce mas</a>
         </div>
       </div>
-      <div class="mt-20 w-full flex flex-row items-center px-20">
-        <div class="w-1/2 pr-5">
-          <h1 class="font-extrabold text-3xl">
+
+      <!-- FEATURE 3: Consultoria -->
+      <div class="mt-16 w-full flex flex-col md:flex-row items-center px-6 md:px-14 lg:px-20 gap-8">
+        <div class="w-full md:w-1/2 text-center md:text-left">
+          <h1 class="font-extrabold text-2xl md:text-3xl">
             Consultoria en Tecnologias de la Informacion
           </h1>
           <p class="mt-3 mb-5">
@@ -152,45 +158,44 @@ import Navbar from "../components/Navbar.astro";
             mejorar su infraestructura tecnológica y alcanzar sus objetivos
             estratégicos.
           </p>
-          <a href="" class="bg-black text-white rounded-xl px-5 py-2"
-            >Conoce mas</a
-          >
+          <a href="" class="inline-block bg-black text-white rounded-xl px-5 py-2">Conoce mas</a>
         </div>
-        <div class="w-1/2">
+        <div class="w-full md:w-1/2">
           <Image
-            class="rounded-lg w-full"
+            class="rounded-lg w-full h-auto"
             src="/it_consulting.jpg"
             alt="IT CONSULTING"
-            width={400}
-            height={300}
+            width={600}
+            height={400}
           />
         </div>
       </div>
+
+      <!-- CASO DE ESTUDIO -->
       <div>
-        <h1 class="font-extrabold text-center text-5xl mt-20">Uno de nuestros proyectos</h1>
+        <h1 class="font-extrabold text-center text-3xl md:text-5xl mt-20 px-4">Uno de nuestros proyectos</h1>
         <section
           id="trazabilidad"
           class="pb-15 pt-10 circuit-bg"
         >
           <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+              <!-- Imagen -->
               <div class="order-2 md:order-1">
                 <div class="relative">
-                  <div
-                    class="absolute inset-0 rounded-2xl transform -rotate-3"
-                  >
-                  </div>
+                  <div class="absolute inset-0 rounded-2xl transform -rotate-3"></div>
                   <img
                     src="https://images.unsplash.com/photo-1556656793-08538906a9f8?w=800&q=80"
                     alt="Escaneo QR"
-                    class="relative rounded-2xl shadow-2xl w-full h-96 object-cover"
+                    class="relative rounded-2xl shadow-2xl w-full h-64 sm:h-96 object-cover"
                   />
                   <div
-                    class="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-xl p-6 max-w-xs"
+                    class="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-xl p-4 max-w-[200px] sm:max-w-xs"
                   >
                     <div class="flex items-center space-x-3">
                       <svg
-                        class="w-12 h-12 text-emerald-600"
+                        class="w-10 h-10 sm:w-12 sm:h-12 text-emerald-600 flex-shrink-0"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -211,89 +216,48 @@ import Navbar from "../components/Navbar.astro";
                 </div>
               </div>
 
-              <div class="order-1 md:order-2">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <!-- Texto -->
+              <div class="order-1 md:order-2 pt-10 md:pt-0">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                   <span class="text-emerald-600">Trazabilidad</span> en tiempo real
-                  <p class="text-lg font-normal mt-5">Software desarrollado para: <span class="font-bold">ALRA PLASTIC S.A de C.V</span></p>
+                  <p class="text-base font-normal mt-5">
+                    Software desarrollado para: <span class="font-bold">ALRA PLASTIC S.A de C.V</span>
+                  </p>
                 </h2>
-                <p class="text-xl text-gray-700 mb-8 leading-relaxed">
+                <p class="text-lg text-gray-700 mb-8 leading-relaxed">
                   Escanea códigos QR para dar seguimiento a lotes y sublotes en
                   tiempo real. Cada lote tiene un historial completo desde su
                   origen hasta su destino final.
                 </p>
                 <ul class="space-y-4 mb-8">
                   <li class="flex items-start space-x-3">
-                    <svg
-                      class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"></path>
+                    <svg class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span class="text-gray-700"
-                      >Información instantánea de cada lote procesado</span
-                    >
+                    <span class="text-gray-700">Información instantánea de cada lote procesado</span>
                   </li>
                   <li class="flex items-start space-x-3">
-                    <svg
-                      class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"></path>
+                    <svg class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span class="text-gray-700"
-                      >Historial completo de transformación</span
-                    >
+                    <span class="text-gray-700">Historial completo de transformación</span>
                   </li>
                   <li class="flex items-start space-x-3">
-                    <svg
-                      class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"></path>
+                    <svg class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span class="text-gray-700"
-                      >Certificados digitales de calidad</span
-                    >
+                    <span class="text-gray-700">Certificados digitales de calidad</span>
                   </li>
                   <li class="flex items-start space-x-3">
-                    <svg
-                      class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"></path>
+                    <svg class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span class="text-gray-700"
-                      >Transparencia total en la cadena de valor</span
-                    >
+                    <span class="text-gray-700">Transparencia total en la cadena de valor</span>
                   </li>
                 </ul>
                 <a
                   href=""
-                  class="btn-primary bg-emerald-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-emerald-700 shadow-lg"
+                  class="inline-block bg-emerald-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-emerald-700 shadow-lg"
                 >
                   Cotiza tu propia aplicacion
                 </a>
@@ -303,6 +267,7 @@ import Navbar from "../components/Navbar.astro";
         </section>
       </div>
     </section>
+
     <Footer />
   </main>
 </Layout>
