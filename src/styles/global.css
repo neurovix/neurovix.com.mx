@@ -1,12 +1,1 @@
 @import "tailwindcss";
-
-@font-face {
-  font-family: roboto-regular;
-  src: url('/fonts/regular.ttf');
-}
-
-@layer components {
-  :root {
-    --font-roboto-regular: roboto-regular;
-  }
-}
